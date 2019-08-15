@@ -19,7 +19,7 @@
     name: 'home',
     computed: {
       welcome() {
-        // return this.$store.getters.welcome
+        return this.$store.getters.welcome;
       }
     }
   }
