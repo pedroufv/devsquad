@@ -11,13 +11,13 @@
                 <th>Actions</th>
             </thead>
             <tbody>
-                <template v-if="!products.length">
+                <template v-if="!products.total">
                     <tr>
                         <td colspan="4" class="text-center">No Products Available</td>
                     </tr>
                 </template>
                 <template v-else>
-                    <tr v-for="product in products" :key="product.id">
+                    <tr v-for="product in products.data" :key="product.id">
                         <td>{{ product.name }}</td>
                         <td>{{ product.description }}</td>
                         <td>{{ product.price }}</td>
@@ -30,20 +30,36 @@
                 </template>
             </tbody>
         </table>
+        <vue-pagination  :pagination="products"
+                         @paginate="getProducts()"
+                         :offset="4">
+        </vue-pagination>
     </div>
 </template>
 
 <script>
+    import VuePagination from './Pagination';
+
     export default {
         name: 'list',
-        mounted() {
-            if (this.products.length) {
-                return;
+        components: {
+            VuePagination
+        },
+        data() {
+            return {
+                products: {}
             }
-
-            this.$store.dispatch('getProducts');
+        },
+        mounted() {
+            this.getProducts();
         },
         methods: {
+            getProducts() {
+                axios.get('/api/v1/products?page=' + this.products.current_page)
+                    .then((response) => {
+                        this.products = response.data;
+                    });
+            },
             destroy(produtoID) {
 
                 // would need I to use the sweetAlert?
@@ -55,11 +71,6 @@
                         console.log(error);
                     })
                 };
-            }
-        },
-        computed: {
-            products() {
-                return this.$store.getters.products;
             }
         }
     }

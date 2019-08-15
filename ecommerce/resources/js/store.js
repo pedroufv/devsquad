@@ -9,7 +9,7 @@ export default {
         isLoggedIn: !!user,
         loading: false,
         auth_error: null,
-        products: []
+        products: Object
     },
     getters: {
         welcome(state) {
@@ -64,8 +64,8 @@ export default {
         getProducts(context) {
             axios.get('/api/v1/products')
                 .then((response) => {
-                    context.commit('updateProducts', response.data.data);
-                })
+                    context.commit('updateProducts', response.data);
+                });
         }
     }
 };
