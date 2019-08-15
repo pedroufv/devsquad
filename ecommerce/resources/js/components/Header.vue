@@ -40,8 +40,8 @@
     name: 'app-header',
     methods: {
       logout() {
-        // this.$store.commit('logout');
-        // this.$router.push('/login');
+        this.$store.commit('logout');
+        this.$router.push('/login');
       }
     },
     computed: {
