@@ -1,0 +1,41 @@
+version: '3.7'
+services:
+  devsquad:
+    build:
+      context: './docker/web'
+      args:
+        uid: ${UID}
+    container_name: devsquad
+    environment:
+      - APACHE_RUN_USER=#${UID}
+      - APACHE_RUN_GROUP=#${UID}
+    depends_on:
+      - db
+    volumes:
+      - ./:/var/www/html/ecommerce/
+    ports:
+      - 8080:80
+    networks:
+      devsquad-network:
+        ipv4_address: 172.28.1.2
+
+  db:
+    image: mysql:5.7
+    container_name: ecommerce-db
+    environment:
+      - MYSQL_ROOT_PASSWORD=securerootpassword
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_USER=${DB_USERNAME}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - ./docker/mysql:/var/lib/mysql
+    networks:
+      devsquad-network:
+        ipv4_address: 172.28.1.1
+
+networks:
+  devsquad-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.28.0.0/16

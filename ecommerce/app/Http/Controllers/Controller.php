@@ -8,7 +8,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 /**
- * @OA\Server(url="http://localhost:8000/api/v1"),
+ * @OA\Server(url="http://devsquad.local:8080/api/v1"),
  * @OA\Info(title="My first API", version="0.0.1")
  */
 class Controller extends BaseController
