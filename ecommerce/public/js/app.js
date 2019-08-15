@@ -39693,7 +39693,7 @@ var render = function() {
         _c("div", { staticClass: "card card-default" }, [
           _c("div", { staticClass: "card-header" }, [_vm._v("Home")]),
           _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
+          _c("div", { staticClass: "card-body text-center" }, [
             _c("h2", [_vm._v(_vm._s(_vm.welcome))])
           ])
         ])

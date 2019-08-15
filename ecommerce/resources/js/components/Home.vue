@@ -5,7 +5,7 @@
                 <div class="card card-default">
                     <div class="card-header">Home</div>
 
-                    <div class="card-body">
+                    <div class="card-body text-center">
                         <h2>{{ welcome }}</h2>
                     </div>
                 </div>
