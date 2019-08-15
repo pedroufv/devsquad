@@ -8,7 +8,8 @@ Route::group(['prefix' => 'v1'], function() {
         Route::post('/logout', 'Api\v1\AuthController@logout')->name('api.v1.logout');
 
         Route::get('users', 'Api\v1\UserController@index')->name('api.v1.users.index');
-
         Route::post('users', 'Api\v1\UserController@store')->name('api.v1.users.store');
+
+        Route::get('categories', 'Api\v1\CategoryController@index')->name('api.v1.categories.index');
     });
 });
