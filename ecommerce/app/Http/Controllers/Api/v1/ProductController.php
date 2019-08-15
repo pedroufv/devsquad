@@ -5,8 +5,11 @@ namespace App\Http\Controllers\Api\v1;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductCreateRequest;
 use App\Http\Requests\ProductUpdateRequest;
+use App\Models\Product;
 use App\Repositories\Interfaces\ProductRepository;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Maatwebsite\Excel\Facades\Excel;
 
 /**
  * Class ProductController.
@@ -265,6 +268,38 @@ class ProductController extends Controller
         return response()->json([
             'message' => 'Product deleted.',
             'deleted' => $deleted,
+        ]);
+    }
+
+    /**
+     * @param  Request  $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function import(Request $request)
+    {
+        $request->validate($request->all(), ['file' => 'required']);
+
+        if(!request()->hasFile('file')) {
+            return response()->json([
+                'message' => "File is mandatory",
+            ], 422);
+        }
+
+        $count = 0;
+        Excel::load($request->get('file'), function ($reader) use (&$count) {
+            $reader->each(function($sheet) use (&$count) {
+                foreach ($sheet->toArray() as $row) {
+                    if($this->repository->findByField('name', $row[0]))
+                        continue;
+
+                    $this->repository->create($row);
+                    $count++;
+                }
+            });
+        });
+
+        return response()->json([
+            'message' => "$count products imported.",
         ]);
     }
 }

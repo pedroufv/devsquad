@@ -13,5 +13,6 @@ Route::group(['prefix' => 'v1'], function() {
         Route::get('categories', 'Api\v1\CategoryController@index')->name('api.v1.categories.index');
 
         Route::apiResource('products', 'Api\v1\ProductController', ['as' => 'api.v1']);
+        Route::post('products/import', 'Api\v1\ProductController@import')->name('api.v1.products.import');;
     });
 });

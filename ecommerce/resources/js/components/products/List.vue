@@ -6,6 +6,7 @@
             </div>
             <div class="btn-wrapper mt-2 col-md-4">
                 <router-link to="/products/new" class="btn btn-success btn-sm">New</router-link>
+                <router-link to="/products/import" class="btn btn-dark btn-sm">CSV</router-link>
             </div>
         </div>
         <table class="table">
