@@ -44,6 +44,13 @@ class ProductController extends Controller
      *          @OA\Schema(type="string"),
      *          style="form"
      *      ),
+     *      @OA\Parameter(
+     *          name="searchJoin",
+     *          in="query",
+     *          description="use AND or OR",
+     *          @OA\Schema(type="string"),
+     *          style="form"
+     *      ),
      *      @OA\Response(
      *          response="200", description="List of products"
      *      )

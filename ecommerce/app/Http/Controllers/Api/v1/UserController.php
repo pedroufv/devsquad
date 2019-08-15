@@ -25,6 +25,20 @@ class UserController extends Controller
      *      description="get all user on database and paginate then",
      *      path="/users",
      *      security={{"bearerAuth": {}}},
+     *      @OA\Parameter(
+     *          name="search",
+     *          in="query",
+     *          description="search results using key:value",
+     *          @OA\Schema(type="string"),
+     *          style="form"
+     *      ),
+     *      @OA\Parameter(
+     *          name="searchJoin",
+     *          in="query",
+     *          description="use AND or OR",
+     *          @OA\Schema(type="string"),
+     *          style="form"
+     *      ),
      *      @OA\Response(
      *          response="200", description="List of users"
      *      )

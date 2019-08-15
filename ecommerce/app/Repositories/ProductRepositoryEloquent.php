@@ -16,6 +16,15 @@ use App\Validators\ProductValidator;
 class ProductRepositoryEloquent extends BaseRepository implements ProductRepository
 {
     /**
+     * search by fields
+     *
+     * @var array
+     */
+    protected $fieldSearchable = [
+        'name'
+    ];
+
+    /**
      * Specify Model class name
      *
      * @return string
@@ -25,7 +34,7 @@ class ProductRepositoryEloquent extends BaseRepository implements ProductReposit
         return Product::class;
     }
 
-    
+
 
     /**
      * Boot up the repository, pushing criteria
@@ -34,5 +43,5 @@ class ProductRepositoryEloquent extends BaseRepository implements ProductReposit
     {
         $this->pushCriteria(app(RequestCriteria::class));
     }
-    
+
 }

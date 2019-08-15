@@ -15,6 +15,15 @@ use Prettus\Repository\Eloquent\BaseRepository;
 class CategoryRepositoryEloquent extends BaseRepository implements CategoryRepository
 {
     /**
+     * search by fields
+     *
+     * @var array
+     */
+    protected $fieldSearchable = [
+        'name'
+    ];
+
+    /**
      * Specify Model class name
      *
      * @return string

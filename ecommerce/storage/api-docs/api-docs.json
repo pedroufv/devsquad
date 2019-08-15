@@ -74,6 +74,26 @@
                 "summary": "get all categories",
                 "description": "get all categories on database",
                 "operationId": "App\\Http\\Controllers\\Api\\v1\\CategoryController::index",
+                "parameters": [
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "description": "search results using key:value",
+                        "style": "form",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "searchJoin",
+                        "in": "query",
+                        "description": "use AND or OR",
+                        "style": "form",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "List of categories"
@@ -289,17 +309,6 @@
                 "summary": "get all user",
                 "description": "get all user on database and paginate then",
                 "operationId": "App\\Http\\Controllers\\Api\\v1\\UserController::index",
-                "parameters": [
-                    {
-                        "name": "search",
-                        "in": "query",
-                        "description": "search results using key:value",
-                        "style": "form",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
                 "responses": {
                     "200": {
                         "description": "List of users"
