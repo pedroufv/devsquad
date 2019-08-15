@@ -1,7 +1,12 @@
 <template>
     <div>
-        <div class="btn-wrapper">
-            <router-link to="/products/new" class="btn btn-success btn-sm">New</router-link>
+        <div class="row">
+            <div class="md-form mt-0 col-md-8">
+                <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+            </div>
+            <div class="btn-wrapper mt-2 col-md-4">
+                <router-link to="/products/new" class="btn btn-success btn-sm">New</router-link>
+            </div>
         </div>
         <table class="table">
             <thead>

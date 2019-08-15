@@ -1947,6 +1947,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'list',
@@ -40031,30 +40036,34 @@ var render = function() {
   return _c(
     "div",
     [
-      _c(
-        "div",
-        { staticClass: "btn-wrapper" },
-        [
-          _c(
-            "router-link",
-            {
-              staticClass: "btn btn-success btn-sm",
-              attrs: { to: "/products/new" }
-            },
-            [_vm._v("New")]
-          )
-        ],
-        1
-      ),
+      _c("div", { staticClass: "row" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "btn-wrapper mt-2 col-md-4" },
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "btn btn-success btn-sm",
+                attrs: { to: "/products/new" }
+              },
+              [_vm._v("New")]
+            )
+          ],
+          1
+        )
+      ]),
       _vm._v(" "),
       _c("table", { staticClass: "table" }, [
-        _vm._m(0),
+        _vm._m(1),
         _vm._v(" "),
         _c(
           "tbody",
           [
             !_vm.products.total
-              ? [_vm._m(1)]
+              ? [_vm._m(2)]
               : _vm._l(_vm.products.data, function(product) {
                   return _c("tr", { key: product.id }, [
                     _c("td", [_vm._v(_vm._s(product.name))]),
@@ -40120,6 +40129,17 @@ var render = function() {
   )
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "md-form mt-0 col-md-8" }, [
+      _c("input", {
+        staticClass: "form-control",
+        attrs: { type: "text", placeholder: "Search", "aria-label": "Search" }
+      })
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
