@@ -2274,8 +2274,8 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    if (this.products.length) {
-      this.product = this.products.find(function (product) {
+    if ("data" in this.products) {
+      this.product = this.products.data.find(function (product) {
         return product.id === parseInt(_this.$route.params.id);
       });
     } else {

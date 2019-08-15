@@ -32,8 +32,8 @@
     export default {
         name: 'show',
         created() {
-            if (this.products.length) {
-                this.product = this.products.find((product) => product.id === parseInt(this.$route.params.id));
+            if ("data" in this.products) {
+                this.product = this.products.data.find((product) => product.id === parseInt(this.$route.params.id));
             } else {
                 axios.get(`/api/v1/products/${this.$route.params.id}`)
                     .then((response) => {
