@@ -1957,12 +1957,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'edit',
   data: function data() {
     return {
       product: {},
+      categories: {},
       errors: null
     };
   },
@@ -1971,6 +1983,11 @@ __webpack_require__.r(__webpack_exports__);
 
     axios.get("/api/v1/products/".concat(this.$route.params.id)).then(function (response) {
       _this.product = response.data.data;
+    });
+    axios.get('/api/v1/categories').then(function (response) {
+      _this.categories = response.data;
+    })["catch"](function (error) {
+      console.log('categories not found');
     });
   },
   computed: {
@@ -2226,6 +2243,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'new',
@@ -2238,6 +2266,7 @@ __webpack_require__.r(__webpack_exports__);
         file: null,
         category_id: 1
       },
+      categories: {},
       errors: null
     };
   },
@@ -2246,12 +2275,21 @@ __webpack_require__.r(__webpack_exports__);
       return this.$store.getters.currentUser;
     }
   },
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get('/api/v1/categories').then(function (response) {
+      _this.categories = response.data;
+    })["catch"](function (error) {
+      console.log('categories not found');
+    });
+  },
   methods: {
     handleFileUpload: function handleFileUpload() {
       this.product.file = this.$refs.file.files[0];
     },
     add: function add() {
-      var _this = this;
+      var _this2 = this;
 
       this.errors = null;
       var constraints = this.getConstraints();
@@ -2277,9 +2315,9 @@ __webpack_require__.r(__webpack_exports__);
           'Content-Type': 'multipart/form-data'
         }
       }).then(function (response) {
-        _this.$router.push('/products');
+        _this2.$router.push('/products');
       })["catch"](function (error) {
-        _this.errors = error.response.data.errors;
+        _this2.errors = error.response.data.errors;
       });
     },
     getConstraints: function getConstraints() {
@@ -40323,6 +40361,61 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("tr", [
+            _c("th", [_vm._v("Category")]),
+            _vm._v(" "),
+            _c("td", [
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.product.category_id,
+                      expression: "product.category_id"
+                    }
+                  ],
+                  on: {
+                    change: function($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function(o) {
+                          return o.selected
+                        })
+                        .map(function(o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.$set(
+                        _vm.product,
+                        "category_id",
+                        $event.target.multiple
+                          ? $$selectedVal
+                          : $$selectedVal[0]
+                      )
+                    }
+                  }
+                },
+                [
+                  _c("option", { attrs: { disabled: "", value: "" } }, [
+                    _vm._v("Please select one")
+                  ]),
+                  _vm._v(" "),
+                  _vm._l(_vm.categories, function(category) {
+                    return _c("option", { domProps: { value: category.id } }, [
+                      _vm._v(
+                        "\n                            " +
+                          _vm._s(category.name) +
+                          "\n                        "
+                      )
+                    ])
+                  })
+                ],
+                2
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
             _c("th", [_vm._v("Image")]),
             _vm._v(" "),
             _c("td", [
@@ -40713,6 +40806,61 @@ var render = function() {
                   }
                 }
               })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("th", [_vm._v("Category")]),
+            _vm._v(" "),
+            _c("td", [
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.product.category_id,
+                      expression: "product.category_id"
+                    }
+                  ],
+                  on: {
+                    change: function($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function(o) {
+                          return o.selected
+                        })
+                        .map(function(o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.$set(
+                        _vm.product,
+                        "category_id",
+                        $event.target.multiple
+                          ? $$selectedVal
+                          : $$selectedVal[0]
+                      )
+                    }
+                  }
+                },
+                [
+                  _c("option", { attrs: { disabled: "", value: "" } }, [
+                    _vm._v("Please select one")
+                  ]),
+                  _vm._v(" "),
+                  _vm._l(_vm.categories, function(category) {
+                    return _c("option", { domProps: { value: category.id } }, [
+                      _vm._v(
+                        "\n                            " +
+                          _vm._s(category.name) +
+                          "\n                        "
+                      )
+                    ])
+                  })
+                ],
+                2
+              )
             ])
           ]),
           _vm._v(" "),

@@ -21,6 +21,17 @@
                     </td>
                 </tr>
                 <tr>
+                    <th>Category</th>
+                    <td>
+                        <select v-model="product.category_id">
+                            <option disabled value="">Please select one</option>
+                            <option v-for="category in categories" v-bind:value="category.id">
+                                {{ category.name}}
+                            </option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
                     <th>Image</th>
                     <td>
                         <input type="file" id="file" ref="file" class="form-control" @change="handleFileUpload()"/>
@@ -54,6 +65,7 @@
         data() {
             return {
                 product: {},
+                categories: {},
                 errors: null
             };
         },
@@ -62,6 +74,13 @@
                 .then((response) => {
                     this.product = response.data.data
                 });
+
+            axios.get('/api/v1/categories')
+                .then((response) => {
+                    this.categories = response.data;
+                }).catch((error) => {
+                console.log('categories not found')
+            });
         },
         computed: {
             currentUser() {
