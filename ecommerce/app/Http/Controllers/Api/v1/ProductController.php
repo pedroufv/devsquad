@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductCreateRequest;
 use App\Http\Requests\ProductUpdateRequest;
 use App\Repositories\Interfaces\ProductRepository;
+use Illuminate\Support\Facades\Storage;
 
 /**
  * Class ProductController.
@@ -241,7 +242,15 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
+        $product = $this->repository->find($id);
+
         $deleted = $this->repository->delete($id);
+
+        Storage::delete($product->image);
+
+        $product->image = '';
+
+        $product->save();
 
         return response()->json([
             'message' => 'Product deleted.',

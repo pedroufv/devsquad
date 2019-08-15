@@ -24,7 +24,7 @@
                         <td class="actions">
                             <router-link :to="`/products/${product.id}`" class="btn btn-primary btn-sm">Show</router-link>
                             <router-link :to="`/products/${product.id}`" class="btn btn-warning btn-sm">Edit</router-link>
-                            <router-link :to="`/products/${product.id}`" class="btn btn-danger btn-sm">Delete</router-link>
+                            <button @click="destroy(product.id)" class="btn btn-danger btn-sm">Delete</button>
                         </td>
                     </tr>
                 </template>
@@ -42,6 +42,20 @@
             }
 
             this.$store.dispatch('getProducts');
+        },
+        methods: {
+            destroy(produtoID) {
+
+                // would need I to use the sweetAlert?
+                if(confirm("Do you really want to delete?")) {
+                    axios.delete(`/api/v1/products/${produtoID}`)
+                        .then((response) => {
+                            this.$router.go('/products');
+                        }).catch(error => {
+                        console.log(error);
+                    })
+                };
+            }
         },
         computed: {
             products() {

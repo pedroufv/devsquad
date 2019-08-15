@@ -1951,6 +1951,22 @@ __webpack_require__.r(__webpack_exports__);
 
     this.$store.dispatch('getProducts');
   },
+  methods: {
+    destroy: function destroy(produtoID) {
+      var _this = this;
+
+      // would need I to use the sweetAlert?
+      if (confirm("Do you really want to delete?")) {
+        axios["delete"]("/api/v1/products/".concat(produtoID)).then(function (response) {
+          _this.$router.go('/products');
+        })["catch"](function (error) {
+          console.log(error);
+        });
+      }
+
+      ;
+    }
+  },
   computed: {
     products: function products() {
       return this.$store.getters.products;
@@ -39983,10 +39999,14 @@ var render = function() {
                       ),
                       _vm._v(" "),
                       _c(
-                        "router-link",
+                        "button",
                         {
                           staticClass: "btn btn-danger btn-sm",
-                          attrs: { to: "/products/" + product.id }
+                          on: {
+                            click: function($event) {
+                              return _vm.destroy(product.id)
+                            }
+                          }
                         },
                         [_vm._v("Delete")]
                       )
