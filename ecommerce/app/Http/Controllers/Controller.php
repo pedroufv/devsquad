@@ -20,6 +20,11 @@ class Controller extends BaseController
     {
         return redirect('api/doc');
     }
+
+    public function spa()
+    {
+        return view('app');
+    }
 }
 
 /**
