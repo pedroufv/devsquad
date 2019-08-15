@@ -39535,7 +39535,7 @@ var render = function() {
           _c(
             "router-link",
             { staticClass: "navbar-brand", attrs: { to: "/" } },
-            [_vm._v("Ecommerce")]
+            [_vm._v("E-commerce")]
           ),
           _vm._v(" "),
           _vm._m(0),
