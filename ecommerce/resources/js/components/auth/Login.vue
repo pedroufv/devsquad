@@ -64,7 +64,7 @@
         },
         computed: {
             authError() {
-                // return this.$store.getters.authError;
+                return this.$store.getters.authError;
             }
         }
     }

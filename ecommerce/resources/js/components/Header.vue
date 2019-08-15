@@ -11,13 +11,10 @@
                         <li>
                             <router-link to="/login" class="nav-link">Login</router-link>
                         </li>
-                        <li>
-                            <router-link to="/register" class="nav-link">Register</router-link>
-                        </li>
                     </template>
                     <template v-else>
                         <li>
-                            <router-link to="/customers" class="nav-link">Products</router-link>
+                            <router-link to="/products" class="nav-link">Products</router-link>
                         </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
@@ -46,7 +43,7 @@
     },
     computed: {
       currentUser() {
-        // return this.$store.getters.currentUser
+        return this.$store.getters.currentUser
       }
     }
   }

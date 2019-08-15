@@ -2,7 +2,7 @@ import { setAuthorization } from "./general";
 
 export function login(credentials) {
     return new Promise((res, rej) => {
-        axios.post('/api/v1/auth/login', credentials)
+        axios.post('/api/v1/login', credentials)
             .then((response) => {
                 setAuthorization(response.data.access_token);
                 res(response.data);
