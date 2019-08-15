@@ -15,12 +15,6 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-
-    public function apiDoc()
-    {
-        return redirect('api/doc');
-    }
-
     public function spa()
     {
         return view('app');
