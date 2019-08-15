@@ -2,7 +2,7 @@
     <div>
         <div class="row">
             <div class="md-form mt-0 col-md-8">
-                <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                <input class="form-control" type="text" @keyup.enter="getProducts()" v-model="searchName" placeholder="Search" aria-label="Search">
             </div>
             <div class="btn-wrapper mt-2 col-md-4">
                 <router-link to="/products/new" class="btn btn-success btn-sm">New</router-link>
@@ -52,7 +52,8 @@
         },
         data() {
             return {
-                products: {}
+                products: {},
+                searchName: '',
             }
         },
         mounted() {
@@ -60,7 +61,8 @@
         },
         methods: {
             getProducts() {
-                axios.get('/api/v1/products?page=' + this.products.current_page)
+                const searchByName = this.searchName !== '' ?  '&searchJoin=and&search=name:'+this.searchName : '';
+                axios.get('/api/v1/products?page=' + this.products.current_page + searchByName)
                     .then((response) => {
                         this.products = response.data;
                     });

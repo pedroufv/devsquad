@@ -1960,7 +1960,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      products: {}
+      products: {},
+      searchName: ''
     };
   },
   mounted: function mounted() {
@@ -1970,7 +1971,8 @@ __webpack_require__.r(__webpack_exports__);
     getProducts: function getProducts() {
       var _this = this;
 
-      axios.get('/api/v1/products?page=' + this.products.current_page).then(function (response) {
+      var searchByName = this.searchName !== '' ? '&searchJoin=and&search=name:' + this.searchName : '';
+      axios.get('/api/v1/products?page=' + this.products.current_page + searchByName).then(function (response) {
         _this.products = response.data;
       });
     },
@@ -40037,7 +40039,42 @@ var render = function() {
     "div",
     [
       _c("div", { staticClass: "row" }, [
-        _vm._m(0),
+        _c("div", { staticClass: "md-form mt-0 col-md-8" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.searchName,
+                expression: "searchName"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: {
+              type: "text",
+              placeholder: "Search",
+              "aria-label": "Search"
+            },
+            domProps: { value: _vm.searchName },
+            on: {
+              keyup: function($event) {
+                if (
+                  !$event.type.indexOf("key") &&
+                  _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                ) {
+                  return null
+                }
+                return _vm.getProducts()
+              },
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.searchName = $event.target.value
+              }
+            }
+          })
+        ]),
         _vm._v(" "),
         _c(
           "div",
@@ -40057,13 +40094,13 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("table", { staticClass: "table" }, [
-        _vm._m(1),
+        _vm._m(0),
         _vm._v(" "),
         _c(
           "tbody",
           [
             !_vm.products.total
-              ? [_vm._m(2)]
+              ? [_vm._m(1)]
               : _vm._l(_vm.products.data, function(product) {
                   return _c("tr", { key: product.id }, [
                     _c("td", [_vm._v(_vm._s(product.name))]),
@@ -40129,17 +40166,6 @@ var render = function() {
   )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "md-form mt-0 col-md-8" }, [
-      _c("input", {
-        staticClass: "form-control",
-        attrs: { type: "text", placeholder: "Search", "aria-label": "Search" }
-      })
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

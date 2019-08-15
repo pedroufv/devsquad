@@ -21,7 +21,7 @@ class ProductRepositoryEloquent extends BaseRepository implements ProductReposit
      * @var array
      */
     protected $fieldSearchable = [
-        'name'
+        'name' => 'like'
     ];
 
     /**
