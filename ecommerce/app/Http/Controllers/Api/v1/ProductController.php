@@ -65,6 +65,13 @@ class ProductController extends Controller
      *          @OA\Schema(type="string"),
      *          style="form"
      *      ),
+     *      @OA\Parameter(
+     *          name="with",
+     *          in="query",
+     *          description="get relationship",
+     *          @OA\Schema(type="string"),
+     *          style="form"
+     *      ),
      *      @OA\Response(
      *          response="200", description="List of products"
      *      )
