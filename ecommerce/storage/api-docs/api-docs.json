@@ -1,7 +1,7 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "My first API",
+        "title": "DevSquad",
         "version": "0.0.1"
     },
     "servers": [
@@ -110,6 +110,15 @@
                         "schema": {
                             "type": "string"
                         }
+                    },
+                    {
+                        "name": "with",
+                        "in": "query",
+                        "description": "get relationship",
+                        "style": "form",
+                        "schema": {
+                            "type": "string"
+                        }
                     }
                 ],
                 "responses": {
@@ -164,6 +173,15 @@
                         "name": "sortedBy",
                         "in": "query",
                         "description": "use ASC or DESC",
+                        "style": "form",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "with",
+                        "in": "query",
+                        "description": "get relationship",
                         "style": "form",
                         "schema": {
                             "type": "string"
@@ -386,6 +404,15 @@
                         "name": "sortedBy",
                         "in": "query",
                         "description": "use ASC or DESC",
+                        "style": "form",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "with",
+                        "in": "query",
+                        "description": "get relationship",
                         "style": "form",
                         "schema": {
                             "type": "string"

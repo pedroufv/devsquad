@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 /**
  * @OA\Server(url="http://devsquad.local:8080/api/v1"),
- * @OA\Info(title="My first API", version="0.0.1")
+ * @OA\Info(title="DevSquad", version="0.0.1")
  */
 class Controller extends BaseController
 {
