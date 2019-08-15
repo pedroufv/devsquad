@@ -2044,6 +2044,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'new',
@@ -2053,6 +2059,7 @@ __webpack_require__.r(__webpack_exports__);
         name: null,
         description: null,
         price: null,
+        file: null,
         category_id: 1
       },
       errors: null
@@ -2064,6 +2071,9 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
+    handleFileUpload: function handleFileUpload() {
+      this.product.file = this.$refs.file.files[0];
+    },
     add: function add() {
       var _this = this;
 
@@ -2076,8 +2086,24 @@ __webpack_require__.r(__webpack_exports__);
         return;
       }
 
-      axios.post('/api/v1/products', this.$data.product).then(function (response) {
+      var formData = new FormData();
+      formData.append('name', this.product.name);
+      formData.append('description', this.product.description);
+      formData.append('price', this.product.price);
+      formData.append('category_id', this.product.category_id);
+
+      if (this.product.file) {
+        formData.append('file', this.product.file);
+      }
+
+      axios.post('/api/v1/products', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }).then(function (response) {
         _this.$router.push('/products');
+      })["catch"](function (error) {
+        _this.errors = error.response.data.errors;
       });
     },
     getConstraints: function getConstraints() {
@@ -40153,6 +40179,23 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("tr", [
+            _c("th", [_vm._v("Image")]),
+            _vm._v(" "),
+            _c("td", [
+              _c("input", {
+                ref: "file",
+                staticClass: "form-control",
+                attrs: { type: "file", id: "file" },
+                on: {
+                  change: function($event) {
+                    return _vm.handleFileUpload()
+                  }
+                }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
             _c(
               "td",
               [
@@ -57061,7 +57104,7 @@ function initialize(store, router) {
     }
   });
   axios.interceptors.response.use(null, function (error) {
-    if (401 === error.resposne.status) {
+    if (401 === error.response.status) {
       store.commit('logout');
       router.push('/login');
     }

@@ -21,6 +21,12 @@
                     </td>
                 </tr>
                 <tr>
+                    <th>Image</th>
+                    <td>
+                        <input type="file" id="file" ref="file" class="form-control" @change="handleFileUpload()"/>
+                    </td>
+                </tr>
+                <tr>
                     <td>
                         <router-link to="/products" class="btn btn-light">Cancel</router-link>
                     </td>
@@ -51,6 +57,7 @@
                     name: null,
                     description: null,
                     price: null,
+                    file: null,
                     category_id: 1
                 },
                 errors: null
@@ -62,6 +69,9 @@
             }
         },
         methods: {
+            handleFileUpload(){
+                this.product.file = this.$refs.file.files[0];
+            },
             add() {
                 this.errors = null;
 
@@ -74,9 +84,21 @@
                     return;
                 }
 
-                axios.post('/api/v1/products', this.$data.product)
+                let formData = new FormData();
+                formData.append('name', this.product.name);
+                formData.append('description', this.product.description);
+                formData.append('price', this.product.price);
+                formData.append('category_id', this.product.category_id);
+
+                if(this.product.file) {
+                    formData.append('file', this.product.file);
+                }
+
+                axios.post('/api/v1/products', formData, { headers: { 'Content-Type': 'multipart/form-data'}})
                     .then((response) => {
                         this.$router.push('/products');
+                    }).catch((error) => {
+                        this.errors = error.response.data.errors;
                     });
             },
             getConstraints() {

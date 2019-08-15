@@ -13,7 +13,7 @@ export function initialize(store, router) {
     });
 
     axios.interceptors.response.use(null, (error) => {
-        if (401 === error.resposne.status) {
+        if (401 === error.response.status) {
             store.commit('logout');
             router.push('/login');
         }

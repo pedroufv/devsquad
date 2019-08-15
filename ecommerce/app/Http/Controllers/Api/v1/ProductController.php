@@ -107,9 +107,16 @@ class ProductController extends Controller
      */
     public function store(ProductCreateRequest $request)
     {
+
         try {
 
-            $product = $this->repository->create($request->all());
+            $attributes = $request->all();
+
+            if ($request->hasFile('file')) {
+                $attributes['image'] = $request->file('file')->store('public/files');
+            }
+
+            $product = $this->repository->create($attributes);
 
             $response = [
                 'message' => 'Product created.',
