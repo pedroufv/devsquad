@@ -2167,6 +2167,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'show',
   created: function created() {
@@ -40266,7 +40267,11 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _vm.product
     ? _c("div", { staticClass: "product-view" }, [
-        _vm._m(0),
+        _c("div", { staticClass: "product-view-img" }, [
+          _vm.product.image
+            ? _c("img", { attrs: { src: _vm.product.image } })
+            : _c("img", { attrs: { src: "/img/product-default.jpg", alt: "" } })
+        ]),
         _vm._v(" "),
         _c(
           "div",
@@ -40305,16 +40310,7 @@ var render = function() {
       ])
     : _vm._e()
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "product-view-img" }, [
-      _c("img", { attrs: { src: "/img/product-default.jpg", alt: "" } })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

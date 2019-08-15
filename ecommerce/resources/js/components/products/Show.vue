@@ -1,7 +1,8 @@
 <template>
     <div class="product-view" v-if="product">
         <div class="product-view-img">
-            <img src="/img/product-default.jpg" alt="">
+            <img v-if="product.image" :src="product.image">
+            <img v-else src="/img/product-default.jpg" alt="">
         </div>
         <div class="product-view-info">
             <table class="table">

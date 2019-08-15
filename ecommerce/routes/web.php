@@ -1,3 +1,4 @@
 <?php
 
+Route::get('/public/files/{filename}', 'Controller@file');
 Route::get('{any}', 'Controller@spa')->where('any', '.*');
