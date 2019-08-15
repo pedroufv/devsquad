@@ -23,9 +23,10 @@ This project is a [Laravel](https://github.com/laravel/laravel) API scaffold usi
 ## How to run this project with docker?
 - run docker `docker-compose build && docker-compose up -d`
 - generate key `docker-compose exec --user=devsquad devsquad bash -c "php ./ecommerce/artisan key:generate"` 
+- generate jwt key `docker-compose exec --user=devsquad devsquad bash -c "php ./ecommerce/artisan jwt:secret"` 
 - run migrations `docker-compose exec --user=devsquad devsquad bash -c "php ./ecommerce/artisan migrate --seed"` 
 - register and login to manager products
 - open hosts `sudo vim /etc/hosts`
 - add host `127.0.0.1   devsquad.local`
-- access `devsquad.local:8080` on browser
+- access `http://devsquad.local:8080` on browser
 - using `host 172.28.1.1` check for users created and use `password` as password
