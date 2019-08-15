@@ -11,7 +11,7 @@
                 <tr>
                     <th>Description</th>
                     <td>
-                        <input type="email" class="form-control" v-model="product.description" placeholder="Product Description"/>
+                        <input type="text" class="form-control" v-model="product.description" placeholder="Product Description"/>
                     </td>
                 </tr>
                 <tr>
@@ -51,6 +51,7 @@
                     name: null,
                     description: null,
                     price: null,
+                    category_id: 1
                 },
                 errors: null
             };
@@ -73,7 +74,7 @@
                     return;
                 }
 
-                axios.post('/api/v1/products/store', this.$data.product)
+                axios.post('/api/v1/products', this.$data.product)
                     .then((response) => {
                         this.$router.push('/products');
                     });

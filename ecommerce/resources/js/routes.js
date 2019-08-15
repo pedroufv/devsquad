@@ -3,7 +3,7 @@ import Login from "./components/auth/Login";
 import ProductsMain from './components/products/Main.vue';
 import ProductsList from './components/products/List.vue';
 import NewProduct from './components/products/New.vue';
-import Product from './components/products/View.vue';;
+import Product from './components/products/Show.vue';;
 
 export const routes = [
     {

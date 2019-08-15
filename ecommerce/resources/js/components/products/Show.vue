@@ -1,9 +1,9 @@
 <template>
     <div class="product-view" v-if="product">
-        <div class="user-img">
-            <img src="https://www.scottsdaleazestateplanning.com/wp-content/uploads/2018/01/user.png" alt="">
+        <div class="product-view-img">
+            <img src="/img/product-default.jpg" alt="">
         </div>
-        <div class="user-info">
+        <div class="product-view-info">
             <table class="table">
                 <tr>
                     <th>ID</th>
@@ -22,21 +22,21 @@
                     <td>{{ product.price }}</td>
                 </tr>
             </table>
-            <router-link to="/products">Back to all products</router-link>
+            <router-link to="/products">Back</router-link>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'view',
+        name: 'show',
         created() {
             if (this.products.length) {
-                this.product = this.products.find((product) => product.id === this.$route.params.id);
+                this.product = this.products.find((product) => product.id === parseInt(this.$route.params.id));
             } else {
                 axios.get(`/api/v1/products/${this.$route.params.id}`)
                     .then((response) => {
-                        this.product = response.data.product
+                        this.product = response.data.data
                     });
             }
         },
@@ -61,13 +61,13 @@
     display: flex;
     align-items: center;
 }
-.user-img {
+.product-view-img {
     flex: 1;
 }
-.user-img img {
+.product-view-img img {
     max-width: 160px;
 }
-.user-info {
+.product-view-info {
     flex: 3;
     overflow-x: scroll;
 }
