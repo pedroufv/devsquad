@@ -40158,7 +40158,7 @@ var render = function() {
               [
                 _c(
                   "router-link",
-                  { staticClass: "btn", attrs: { to: "/products" } },
+                  { staticClass: "btn btn-light", attrs: { to: "/products" } },
                   [_vm._v("Cancel")]
                 )
               ],

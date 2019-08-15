@@ -22,7 +22,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <router-link to="/products" class="btn">Cancel</router-link>
+                        <router-link to="/products" class="btn btn-light">Cancel</router-link>
                     </td>
                     <td class="text-right">
                         <input type="submit" value="Create" class="btn btn-primary">
