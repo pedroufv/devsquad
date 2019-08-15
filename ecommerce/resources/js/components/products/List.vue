@@ -27,8 +27,8 @@
                         <td>{{ product.description }}</td>
                         <td>{{ product.price }}</td>
                         <td class="actions">
-                            <router-link :to="`/products/${product.id}`" class="btn btn-primary btn-sm">Show</router-link>
-                            <router-link :to="`/products/${product.id}`" class="btn btn-warning btn-sm">Edit</router-link>
+                            <router-link :to="`/products/${product.id}/show`" class="btn btn-primary btn-sm">Show</router-link>
+                            <router-link :to="`/products/${product.id}/edit`" class="btn btn-warning btn-sm">Edit</router-link>
                             <button @click="destroy(product.id)" class="btn btn-danger btn-sm">Delete</button>
                         </td>
                     </tr>

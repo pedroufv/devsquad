@@ -108,7 +108,6 @@ class ProductController extends Controller
      */
     public function store(ProductCreateRequest $request)
     {
-
         try {
 
             $attributes = $request->all();
@@ -199,6 +198,17 @@ class ProductController extends Controller
     public function update(ProductUpdateRequest $request, $id)
     {
         try {
+
+            $attributes = $request->all();
+
+            if ($request->hasFile('file')) {
+
+                $product = $this->repository->find($id);
+
+                Storage::delete($product->image);
+
+                $attributes['image'] = $request->file('file')->store('public/files');
+            }
 
             $product = $this->repository->update($request->all(), $id);
 
