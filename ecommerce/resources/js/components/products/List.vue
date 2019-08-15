@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="btn-wrapper">
-            <router-link to="/products/new" class="btn btn-primary btn-sm">New</router-link>
+            <router-link to="/products/new" class="btn btn-success btn-sm">New</router-link>
         </div>
         <table class="table">
             <thead>
@@ -21,8 +21,10 @@
                         <td>{{ product.name }}</td>
                         <td>{{ product.description }}</td>
                         <td>{{ product.price }}</td>
-                        <td>
-                            <router-link :to="`/products/${product.id}`">View</router-link>
+                        <td class="actions">
+                            <router-link :to="`/products/${product.id}`" class="btn btn-primary btn-sm">Show</router-link>
+                            <router-link :to="`/products/${product.id}`" class="btn btn-warning btn-sm">Edit</router-link>
+                            <router-link :to="`/products/${product.id}`" class="btn btn-danger btn-sm">Delete</router-link>
                         </td>
                     </tr>
                 </template>
@@ -53,5 +55,8 @@
 .btn-wrapper {
     text-align: right;
     margin-bottom: 20px;
+}
+.actions {
+    width: 30%;
 }
 </style>

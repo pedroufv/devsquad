@@ -1940,6 +1940,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'list',
   mounted: function mounted() {
@@ -6647,7 +6649,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.btn-wrapper[data-v-9e755c64] {\n    text-align: right;\n    margin-bottom: 20px;\n}\n", ""]);
+exports.push([module.i, "\n.btn-wrapper[data-v-9e755c64] {\n    text-align: right;\n    margin-bottom: 20px;\n}\n.actions[data-v-9e755c64] {\n    width: 30%;\n}\n", ""]);
 
 // exports
 
@@ -39906,7 +39908,7 @@ var render = function() {
         _c(
           "router-link",
           {
-            staticClass: "btn btn-primary btn-sm",
+            staticClass: "btn btn-success btn-sm",
             attrs: { to: "/products/new" }
           },
           [_vm._v("New")]
@@ -39933,11 +39935,33 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "td",
+                    { staticClass: "actions" },
                     [
                       _c(
                         "router-link",
-                        { attrs: { to: "/products/" + product.id } },
-                        [_vm._v("View")]
+                        {
+                          staticClass: "btn btn-primary btn-sm",
+                          attrs: { to: "/products/" + product.id }
+                        },
+                        [_vm._v("Show")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "router-link",
+                        {
+                          staticClass: "btn btn-warning btn-sm",
+                          attrs: { to: "/products/" + product.id }
+                        },
+                        [_vm._v("Edit")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "router-link",
+                        {
+                          staticClass: "btn btn-danger btn-sm",
+                          attrs: { to: "/products/" + product.id }
+                        },
+                        [_vm._v("Delete")]
                       )
                     ],
                     1
