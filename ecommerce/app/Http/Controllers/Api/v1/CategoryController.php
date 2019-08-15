@@ -26,7 +26,7 @@ class CategoryController extends Controller
      *      path="/categories",
      *      security={{"bearerAuth": {}}},
      *      @OA\Response(
-     *          response="200", description="List of users"
+     *          response="200", description="List of categories"
      *      )
      *  )
      */
