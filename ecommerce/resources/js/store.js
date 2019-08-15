@@ -64,7 +64,7 @@ export default {
         getProducts(context) {
             axios.get('/api/v1/products')
                 .then((response) => {
-                    context.commit('updateProducts', response.data.products);
+                    context.commit('updateProducts', response.data.data);
                 })
         }
     }

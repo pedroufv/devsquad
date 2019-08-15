@@ -1998,14 +1998,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var validate_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! validate.js */ "./node_modules/validate.js/validate.js");
-/* harmony import */ var validate_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(validate_js__WEBPACK_IMPORTED_MODULE_1__);
-//
-//
-//
-//
-//
-//
+/* harmony import */ var validate_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! validate.js */ "./node_modules/validate.js/validate.js");
+/* harmony import */ var validate_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(validate_js__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -2054,10 +2048,9 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       product: {
-        name: '',
-        email: '',
-        phone: '',
-        website: ''
+        name: null,
+        description: null,
+        price: null
       },
       errors: null
     };
@@ -2073,14 +2066,14 @@ __webpack_require__.r(__webpack_exports__);
 
       this.errors = null;
       var constraints = this.getConstraints();
-      var errors = validate_js__WEBPACK_IMPORTED_MODULE_1___default()(this.$data.product, constraints);
+      var errors = validate_js__WEBPACK_IMPORTED_MODULE_0___default()(this.$data.product, constraints);
 
       if (errors) {
         this.errors = errors;
         return;
       }
 
-      axios.post('/api/products/new', this.$data.product).then(function (response) {
+      axios.post('/api/v1/products/store', this.$data.product).then(function (response) {
         _this.$router.push('/products');
       });
     },
@@ -2089,25 +2082,16 @@ __webpack_require__.r(__webpack_exports__);
         name: {
           presence: true,
           length: {
-            minimum: 3,
-            message: 'Must be at least 3 characters long'
+            maximum: 64,
+            message: 'Must be at max 64 characters long'
           }
         },
-        email: {
-          presence: true,
-          email: true
+        description: {
+          presence: true
         },
-        phone: {
+        price: {
           presence: true,
-          numericality: true,
-          length: {
-            minimum: 10,
-            message: 'Must be at least 10 digits long'
-          }
-        },
-        website: {
-          presence: true,
-          url: true
+          numericality: true
         }
       };
     }
@@ -2154,10 +2138,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'view',
   created: function created() {
@@ -2165,10 +2145,10 @@ __webpack_require__.r(__webpack_exports__);
 
     if (this.products.length) {
       this.product = this.products.find(function (product) {
-        return product.id == _this.$route.params.id;
+        return product.id === _this.$route.params.id;
       });
     } else {
-      axios.get("/api/products/".concat(this.$route.params.id)).then(function (response) {
+      axios.get("/api/v1/products/".concat(this.$route.params.id)).then(function (response) {
         _this.product = response.data.product;
       });
     }
@@ -39946,9 +39926,9 @@ var render = function() {
                 return _c("tr", { key: product.id }, [
                   _c("td", [_vm._v(_vm._s(product.name))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(product.email))]),
+                  _c("td", [_vm._v(_vm._s(product.description))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(product.phone))]),
+                  _c("td", [_vm._v(_vm._s(product.price))]),
                   _vm._v(" "),
                   _c(
                     "td",
@@ -39977,9 +39957,9 @@ var staticRenderFns = [
     return _c("thead", [
       _c("th", [_vm._v("Name")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Email")]),
+      _c("th", [_vm._v("Description")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Phone")]),
+      _c("th", [_vm._v("Price")]),
       _vm._v(" "),
       _c("th", [_vm._v("Actions")])
     ])
@@ -40050,7 +40030,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "customer-new" }, [
+  return _c("div", { staticClass: "product-new" }, [
     _c(
       "form",
       {
@@ -40072,19 +40052,19 @@ var render = function() {
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.customer.name,
-                    expression: "customer.name"
+                    value: _vm.product.name,
+                    expression: "product.name"
                   }
                 ],
                 staticClass: "form-control",
                 attrs: { type: "text", placeholder: "Product Name" },
-                domProps: { value: _vm.customer.name },
+                domProps: { value: _vm.product.name },
                 on: {
                   input: function($event) {
                     if ($event.target.composing) {
                       return
                     }
-                    _vm.$set(_vm.customer, "name", $event.target.value)
+                    _vm.$set(_vm.product, "name", $event.target.value)
                   }
                 }
               })
@@ -40092,7 +40072,7 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("tr", [
-            _c("th", [_vm._v("Email")]),
+            _c("th", [_vm._v("Description")]),
             _vm._v(" "),
             _c("td", [
               _c("input", {
@@ -40100,19 +40080,19 @@ var render = function() {
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.product.email,
-                    expression: "product.email"
+                    value: _vm.product.description,
+                    expression: "product.description"
                   }
                 ],
                 staticClass: "form-control",
-                attrs: { type: "email", placeholder: "Product Email" },
-                domProps: { value: _vm.product.email },
+                attrs: { type: "email", placeholder: "Product Description" },
+                domProps: { value: _vm.product.description },
                 on: {
                   input: function($event) {
                     if ($event.target.composing) {
                       return
                     }
-                    _vm.$set(_vm.product, "email", $event.target.value)
+                    _vm.$set(_vm.product, "description", $event.target.value)
                   }
                 }
               })
@@ -40120,7 +40100,7 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("tr", [
-            _c("th", [_vm._v("Phone")]),
+            _c("th", [_vm._v("Price")]),
             _vm._v(" "),
             _c("td", [
               _c("input", {
@@ -40128,47 +40108,19 @@ var render = function() {
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.product.phone,
-                    expression: "product.phone"
+                    value: _vm.product.price,
+                    expression: "product.price"
                   }
                 ],
                 staticClass: "form-control",
-                attrs: { type: "text", placeholder: "Product Phone" },
-                domProps: { value: _vm.product.phone },
+                attrs: { type: "text", placeholder: "Product Price" },
+                domProps: { value: _vm.product.price },
                 on: {
                   input: function($event) {
                     if ($event.target.composing) {
                       return
                     }
-                    _vm.$set(_vm.product, "phone", $event.target.value)
-                  }
-                }
-              })
-            ])
-          ]),
-          _vm._v(" "),
-          _c("tr", [
-            _c("th", [_vm._v("Website")]),
-            _vm._v(" "),
-            _c("td", [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.product.website,
-                    expression: "product.website"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: { type: "text", placeholder: "Product Website" },
-                domProps: { value: _vm.product.website },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.product, "website", $event.target.value)
+                    _vm.$set(_vm.product, "price", $event.target.value)
                   }
                 }
               })
@@ -40266,21 +40218,15 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("tr", [
-                _c("th", [_vm._v("Email")]),
+                _c("th", [_vm._v("Description")]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm.product.email))])
+                _c("td", [_vm._v(_vm._s(_vm.product.description))])
               ]),
               _vm._v(" "),
               _c("tr", [
-                _c("th", [_vm._v("Phone")]),
+                _c("th", [_vm._v("Price")]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm.product.phone))])
-              ]),
-              _vm._v(" "),
-              _c("tr", [
-                _c("th", [_vm._v("Website")]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm.product.website))])
+                _c("td", [_vm._v(_vm._s(_vm.product.price))])
               ])
             ]),
             _vm._v(" "),
@@ -57242,7 +57188,7 @@ var user = Object(_helpers_auth__WEBPACK_IMPORTED_MODULE_0__["getLocalUser"])();
     },
     getProducts: function getProducts(context) {
       axios.get('/api/v1/products').then(function (response) {
-        context.commit('updateProducts', response.data.products);
+        context.commit('updateProducts', response.data.data);
       });
     }
   }
