@@ -51,6 +51,20 @@ class ProductController extends Controller
      *          @OA\Schema(type="string"),
      *          style="form"
      *      ),
+     *      @OA\Parameter(
+     *          name="orderBy",
+     *          in="query",
+     *          description="order results by",
+     *          @OA\Schema(type="string"),
+     *          style="form"
+     *      ),
+     *      @OA\Parameter(
+     *          name="sortedBy",
+     *          in="query",
+     *          description="use ASC or DESC",
+     *          @OA\Schema(type="string"),
+     *          style="form"
+     *      ),
      *      @OA\Response(
      *          response="200", description="List of products"
      *      )

@@ -92,6 +92,24 @@
                         "schema": {
                             "type": "string"
                         }
+                    },
+                    {
+                        "name": "orderBy",
+                        "in": "query",
+                        "description": "order results by",
+                        "style": "form",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "sortedBy",
+                        "in": "query",
+                        "description": "use ASC or DESC",
+                        "style": "form",
+                        "schema": {
+                            "type": "string"
+                        }
                     }
                 ],
                 "responses": {
@@ -119,6 +137,33 @@
                         "name": "search",
                         "in": "query",
                         "description": "search results using key:value",
+                        "style": "form",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "searchJoin",
+                        "in": "query",
+                        "description": "use AND or OR",
+                        "style": "form",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "orderBy",
+                        "in": "query",
+                        "description": "order results by",
+                        "style": "form",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "sortedBy",
+                        "in": "query",
+                        "description": "use ASC or DESC",
                         "style": "form",
                         "schema": {
                             "type": "string"
@@ -309,6 +354,44 @@
                 "summary": "get all user",
                 "description": "get all user on database and paginate then",
                 "operationId": "App\\Http\\Controllers\\Api\\v1\\UserController::index",
+                "parameters": [
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "description": "search results using key:value",
+                        "style": "form",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "searchJoin",
+                        "in": "query",
+                        "description": "use AND or OR",
+                        "style": "form",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "orderBy",
+                        "in": "query",
+                        "description": "order results by",
+                        "style": "form",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "sortedBy",
+                        "in": "query",
+                        "description": "use ASC or DESC",
+                        "style": "form",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "List of users"
