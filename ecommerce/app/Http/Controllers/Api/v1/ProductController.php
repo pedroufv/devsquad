@@ -7,6 +7,7 @@ use App\Http\Requests\ProductCreateRequest;
 use App\Http\Requests\ProductUpdateRequest;
 use App\Models\Product;
 use App\Repositories\Interfaces\ProductRepository;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Maatwebsite\Excel\Facades\Excel;
@@ -277,7 +278,7 @@ class ProductController extends Controller
      */
     public function import(Request $request)
     {
-        $request->validate($request->all(), ['file' => 'required']);
+        $request->validate(['file' => 'required']);
 
         if(!request()->hasFile('file')) {
             return response()->json([
@@ -285,18 +286,29 @@ class ProductController extends Controller
             ], 422);
         }
 
-        $count = 0;
-        Excel::load($request->get('file'), function ($reader) use (&$count) {
-            $reader->each(function($sheet) use (&$count) {
-                foreach ($sheet->toArray() as $row) {
-                    if($this->repository->findByField('name', $row[0]))
-                        continue;
+        $file = $request->file('file');
+        $path = $file->storeAs('imports', \Str::random(40) . '.' . $file->getClientOriginalExtension());
 
-                    $this->repository->create($row);
-                    $count++;
-                }
-            });
-        });
+        $count = 0;
+        $reader = Excel::load(storage_path("app/$path"));
+        $results = $reader->toArray();
+        foreach ($results as $row) {
+            $numRow = array_values($row);
+            /** @var Collection $found */
+            $found = $this->repository->findByField('name', $numRow[0]);
+            if($found->isNotEmpty())
+                continue;
+
+            $attributes['name'] = $numRow[0];
+            $attributes['description'] = $numRow[1];
+            $attributes['price'] = $numRow[2];
+            $attributes['category_id'] = $numRow[3];
+
+            $this->repository->create($attributes);
+            $count++;
+        }
+
+        Storage::delete($path);
 
         return response()->json([
             'message' => "$count products imported.",
