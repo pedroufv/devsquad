@@ -28,5 +28,7 @@ This project is a [Laravel](https://github.com/laravel/laravel) API scaffold usi
 - register and login to manager products
 - open hosts `sudo vim /etc/hosts`
 - add host `127.0.0.1   devsquad.local`
+- run `npm install` or just `npm i`
 - access `http://devsquad.local:8080` on browser
 - using `host 172.28.1.1` check for users created and use `password` as password
+- see api documentation in `/api/doc` like `http://devsquad.local:8080/api/doc`
