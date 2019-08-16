@@ -309,7 +309,7 @@ class ProductController extends Controller
         }
 
         $file = $request->file('file');
-        $file->storeAs('imports-scheduled', auth()->id."-".time(). '.' . $file->getClientOriginalExtension());
+        $file->storeAs('imports-scheduled', auth()->id()."-".time(). '.' . $file->getClientOriginalExtension());
 
         return response()->json([
             'message' => "Products' imports scheduled.",
