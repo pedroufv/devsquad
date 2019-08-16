@@ -1,6 +1,7 @@
 FROM php:7.2-apache
 
-RUN apt-get update && apt-get install -y git nodejs
+RUN apt-get update && apt-get install -y git nodejs supervisor cron
+RUN apt-get update && apt-get install -y git nodejs supervisor cron
 
 RUN apt-get install -y \
     git \
@@ -30,7 +31,6 @@ RUN docker-php-ext-install \
     pdo_mysql \
     zip
 
-
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 ARG uid
@@ -43,6 +43,9 @@ RUN a2enmod rewrite headers
 COPY apache /etc/apache2/sites-available/
 
 RUN a2ensite devsquad.conf
+
+COPY supervisor /etc/supervisor/conf.d/
+RUN mkdir -p /var/www/html/ecommerce/storage/logs/
 
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 CMD apachectl -D FOREGROUND

@@ -32,3 +32,10 @@ This project is a [Laravel](https://github.com/laravel/laravel) API scaffold usi
 - access `http://devsquad.local:8080` on browser
 - using `host 172.28.1.1` check for users created and use `password` as password
 - see api documentation in `/api/doc` like `http://devsquad.local:8080/api/doc`
+
+## Additional info
+- Configure email on `.env` with mailtrap, for example, to see the notifications
+- With docker run `docker exec -it devsquad bash -c "service supervisor force-reload"` for start queue worker
+- If you run this without docker configure worker on supervisor to queues
+- If you run this without docker add `* * * * * php /path-to-your-projec/artisan schedule:run >> /dev/null 2>&1` on cron
+- On `docker/web/supervisor` has worker file for put into `/etc/supervisor/conf.d/`
