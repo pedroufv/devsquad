@@ -314,4 +314,26 @@ class ProductController extends Controller
             'message' => "$count products imported.",
         ]);
     }
+
+    /**
+     * @param  Request  $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function schedule(Request $request)
+    {
+        $request->validate(['file' => 'required']);
+
+        if(!request()->hasFile('file')) {
+            return response()->json([
+                'message' => "File is mandatory",
+            ], 422);
+        }
+
+        $file = $request->file('file');
+        $file->storeAs('imports-scheduled', \Str::random(40) . '.' . $file->getClientOriginalExtension());
+
+        return response()->json([
+            'message' => "Products' imports scheduled.",
+        ]);
+    }
 }
