@@ -7096,7 +7096,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.product-view[data-v-4c5e34ad] {\n    display: flex;\n    align-items: center;\n}\n.product-view-img[data-v-4c5e34ad] {\n    flex: 1;\n}\n.product-view-img img[data-v-4c5e34ad] {\n    max-width: 160px;\n}\n.product-view-info[data-v-4c5e34ad] {\n    flex: 3;\n    overflow-x: scroll;\n}\n", ""]);
+exports.push([module.i, "\n.product-view[data-v-4c5e34ad] {\n    display: flex;\n    align-items: center;\n}\n.product-view-img[data-v-4c5e34ad] {\n    flex: 1;\n}\n.product-view-img img[data-v-4c5e34ad] {\n    max-width: 160px;\n}\n.product-view-info[data-v-4c5e34ad] {\n    flex: 3;\n}\n", ""]);
 
 // exports
 
@@ -41247,7 +41247,14 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _c("router-link", { attrs: { to: "/products" } }, [_vm._v("Back")])
+            _c(
+              "router-link",
+              {
+                staticClass: "btn btn-primary float-right",
+                attrs: { to: "/products" }
+              },
+              [_vm._v("Back")]
+            )
           ],
           1
         )

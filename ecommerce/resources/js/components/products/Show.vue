@@ -23,7 +23,7 @@
                     <td>{{ product.price }}</td>
                 </tr>
             </table>
-            <router-link to="/products">Back</router-link>
+            <router-link to="/products" class="btn btn-primary float-right">Back</router-link>
         </div>
     </div>
 </template>
@@ -70,6 +70,5 @@
 }
 .product-view-info {
     flex: 3;
-    overflow-x: scroll;
 }
 </style>
