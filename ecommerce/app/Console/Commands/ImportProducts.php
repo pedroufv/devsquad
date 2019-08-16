@@ -7,7 +7,8 @@ use App\Notifications\ProductsImported;
 use App\Repositories\Interfaces\ProductRepository;
 use App\Services\ProductService;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
+
 
 class ImportProducts extends Command
 {
@@ -50,15 +51,16 @@ class ImportProducts extends Command
     public function handle()
     {
         // get all files on directory 'storage/app/imports-scheduled'
-        if(!$paths = Storage::files(storage_path('app/imports-scheduled')))
+        if(!$files = File::files(storage_path('app/imports-scheduled')))
             return;
 
         // import each file
-        foreach ($paths as $path) {
+        foreach ($files as $file) {
+            $path = str_replace(storage_path('app/'),'', $file->getPathname());
             $total = ProductService::import($this->repository, $path);
 
             // is possible to save this on a table and have the history for this
-            $name = explode('.', $path);
+            $name = explode('-', $file->getFilename());
 
             if(!$user = User::find($name[0]))
                 return;

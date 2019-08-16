@@ -41784,68 +41784,58 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "product-scheduler" },
-    [
-      _c("spam", [
-        _vm._v(
-          "Your file sent will be imported automatically by tasks schedule"
-        )
-      ]),
-      _vm._v(" "),
-      _c(
-        "form",
-        {
-          on: {
-            submit: function($event) {
-              $event.preventDefault()
-              return _vm.add($event)
-            }
+  return _c("div", { staticClass: "product-scheduler" }, [
+    _c("span", [
+      _vm._v("Your file sent will be imported automatically by tasks schedule")
+    ]),
+    _vm._v(" "),
+    _c(
+      "form",
+      {
+        on: {
+          submit: function($event) {
+            $event.preventDefault()
+            return _vm.add($event)
           }
-        },
-        [
-          _c("table", { staticClass: "table" }, [
-            _c("tr", [
-              _c("th", [_vm._v("CSV")]),
-              _vm._v(" "),
-              _c("td", [
-                _c("input", {
-                  ref: "file",
-                  attrs: { type: "file", id: "file" },
-                  on: {
-                    change: function($event) {
-                      return _vm.handleFileUpload()
-                    }
-                  }
-                })
-              ])
-            ]),
+        }
+      },
+      [
+        _c("table", { staticClass: "table" }, [
+          _c("tr", [
+            _c("th", [_vm._v("CSV")]),
             _vm._v(" "),
-            _c("tr", [
-              _c(
-                "td",
-                [
-                  _c(
-                    "router-link",
-                    {
-                      staticClass: "btn btn-light",
-                      attrs: { to: "/products" }
-                    },
-                    [_vm._v("Cancel")]
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _vm._m(0)
+            _c("td", [
+              _c("input", {
+                ref: "file",
+                attrs: { type: "file", id: "file" },
+                on: {
+                  change: function($event) {
+                    return _vm.handleFileUpload()
+                  }
+                }
+              })
             ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c(
+              "td",
+              [
+                _c(
+                  "router-link",
+                  { staticClass: "btn btn-light", attrs: { to: "/products" } },
+                  [_vm._v("Cancel")]
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _vm._m(0)
           ])
-        ]
-      )
-    ],
-    1
-  )
+        ])
+      ]
+    )
+  ])
 }
 var staticRenderFns = [
   function() {
