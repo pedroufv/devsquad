@@ -47,5 +47,11 @@ RUN a2ensite devsquad.conf
 COPY supervisor /etc/supervisor/conf.d/
 RUN mkdir -p /var/www/html/ecommerce/storage/logs/
 
+COPY cron/ecommerce-cron /etc/cron.d/ecommerce-cron
+RUN chmod 0644 /etc/cron.d/ecommerce-cron
+RUN crontab /etc/cron.d/ecommerce-cron
+RUN touch /var/log/cron.log
+CMD cron && tail -f /var/log/cron.log
+
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 CMD apachectl -D FOREGROUND
