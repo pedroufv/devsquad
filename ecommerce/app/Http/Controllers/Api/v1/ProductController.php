@@ -5,12 +5,10 @@ namespace App\Http\Controllers\Api\v1;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductCreateRequest;
 use App\Http\Requests\ProductUpdateRequest;
-use App\Models\Product;
 use App\Repositories\Interfaces\ProductRepository;
-use Illuminate\Database\Eloquent\Collection;
+use App\Services\ProductService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use Maatwebsite\Excel\Facades\Excel;
 
 /**
  * Class ProductController.
@@ -289,29 +287,10 @@ class ProductController extends Controller
         $file = $request->file('file');
         $path = $file->storeAs('imports', \Str::random(40) . '.' . $file->getClientOriginalExtension());
 
-        $count = 0;
-        $reader = Excel::load(storage_path("app/$path"));
-        $results = $reader->toArray();
-        foreach ($results as $row) {
-            $numRow = array_values($row);
-            /** @var Collection $found */
-            $found = $this->repository->findByField('name', $numRow[0]);
-            if($found->isNotEmpty())
-                continue;
-
-            $attributes['name'] = $numRow[0];
-            $attributes['description'] = $numRow[1];
-            $attributes['price'] = $numRow[2];
-            $attributes['category_id'] = $numRow[3];
-
-            $this->repository->create($attributes);
-            $count++;
-        }
-
-        Storage::delete($path);
+        $total = ProductService::import($this->repository, $path);
 
         return response()->json([
-            'message' => "$count products imported.",
+            'message' => "$total products imported.",
         ]);
     }
 
@@ -321,16 +300,16 @@ class ProductController extends Controller
      */
     public function schedule(Request $request)
     {
-        $request->validate(['file' => 'required']);
+        $request->validate(['file' => 'required|mimes:csv']);
 
         if(!request()->hasFile('file')) {
             return response()->json([
-                'message' => "File is mandatory",
+                'message' => "CSV file is required",
             ], 422);
         }
 
         $file = $request->file('file');
-        $file->storeAs('imports-scheduled', \Str::random(40) . '.' . $file->getClientOriginalExtension());
+        $file->storeAs('imports-scheduled', auth()->id."-".time(). '.' . $file->getClientOriginalExtension());
 
         return response()->json([
             'message' => "Products' imports scheduled.",
