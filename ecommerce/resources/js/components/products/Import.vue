@@ -6,7 +6,7 @@
                 <tr>
                     <th>CSV</th>
                     <td>
-                        <input type="file" id="file" ref="file" class="form-control" @change="handleFileUpload()"/>
+                        <input type="file" id="file" ref="file" @change="handleFileUpload()"/>
                     </td>
                 </tr>
                 <tr>

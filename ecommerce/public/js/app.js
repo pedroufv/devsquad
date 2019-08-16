@@ -40497,7 +40497,6 @@ var render = function() {
             _c("td", [
               _c("input", {
                 ref: "file",
-                staticClass: "form-control",
                 attrs: { type: "file", id: "file" },
                 on: {
                   change: function($event) {
@@ -40596,7 +40595,6 @@ var render = function() {
             _c("td", [
               _c("input", {
                 ref: "file",
-                staticClass: "form-control",
                 attrs: { type: "file", id: "file" },
                 on: {
                   change: function($event) {
@@ -41039,7 +41037,6 @@ var render = function() {
             _c("td", [
               _c("input", {
                 ref: "file",
-                staticClass: "form-control",
                 attrs: { type: "file", id: "file" },
                 on: {
                   change: function($event) {
