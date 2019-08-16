@@ -64,6 +64,9 @@
         },
         computed: {
             authError() {
+                if(this.$store.getters.authError)
+                    toastr.error(this.$store.getters.authError);
+
                 return this.$store.getters.authError;
             }
         }
