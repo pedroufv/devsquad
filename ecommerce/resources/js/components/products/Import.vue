@@ -45,7 +45,7 @@
                 let formData = new FormData();
 
                 if(!this.file) {
-                    alert('file is mandatory!')
+                    toastr.error('file is mandatory!');
                     return;
                 }
 
@@ -53,9 +53,10 @@
 
                 axios.post('/api/v1/products/import', formData, { headers: { 'Content-Type': 'multipart/form-data'}})
                     .then((response) => {
+                        toastr.success(response.data.message);
                         this.$router.push('/products');
                     }).catch((error) => {
-                        console.log('import not works!');
+                        toastr.error('import not works!');
                     });
             }
         }

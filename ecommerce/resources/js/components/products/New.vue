@@ -116,6 +116,7 @@
 
                 axios.post('/api/v1/products', formData, { headers: { 'Content-Type': 'multipart/form-data'}})
                     .then((response) => {
+                        toastr.success(response.data.message);
                         this.$router.push('/products');
                     }).catch((error) => {
                         this.errors = error.response.data.errors;

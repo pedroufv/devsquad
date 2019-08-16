@@ -1,5 +1,7 @@
 window._ = require('lodash');
 
+window.toastr = require('toastr');
+
 try {
     window.$ = window.jQuery = require('jquery');
 

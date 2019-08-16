@@ -74,9 +74,10 @@
                 if(confirm("Do you really want to delete?")) {
                     axios.delete(`/api/v1/products/${produtoID}`)
                         .then((response) => {
-                            this.$router.go('/products');
+                            toastr.info(response.data.message);
+                            this.getProducts();
                         }).catch(error => {
-                        console.log(error);
+                            console.log(error);
                     })
                 };
             }

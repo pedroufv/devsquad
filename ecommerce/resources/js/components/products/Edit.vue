@@ -79,7 +79,7 @@
                 .then((response) => {
                     this.categories = response.data;
                 }).catch((error) => {
-                console.log('categories not found')
+                    console.log('categories not found')
             });
         },
         computed: {
@@ -117,6 +117,7 @@
 
                 axios.post('/api/v1/products/'+this.product.id, formData, { headers: { 'Content-Type': 'multipart/form-data'}})
                     .then((response) => {
+                        toastr.success(response.data.message);
                         this.$router.push('/products');
                     }).catch((error) => {
                         this.errors = error.response.data.errors;
