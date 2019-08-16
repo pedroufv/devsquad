@@ -40633,7 +40633,7 @@ var staticRenderFns = [
     return _c("td", { staticClass: "text-right" }, [
       _c("input", {
         staticClass: "btn btn-primary",
-        attrs: { type: "submit", value: "Create" }
+        attrs: { type: "submit", value: "Import" }
       })
     ])
   }

@@ -14,7 +14,7 @@
                         <router-link to="/products" class="btn btn-light">Cancel</router-link>
                     </td>
                     <td class="text-right">
-                        <input type="submit" value="Create" class="btn btn-primary">
+                        <input type="submit" value="Import" class="btn btn-primary">
                     </td>
                 </tr>
             </table>
