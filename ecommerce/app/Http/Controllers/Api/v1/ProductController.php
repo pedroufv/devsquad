@@ -116,7 +116,7 @@ class ProductController extends Controller
             $attributes = $request->all();
 
             if ($request->hasFile('file')) {
-                $attributes['image'] = $request->file('file')->store('public/files');
+                $attributes['image'] = "/".$request->file('file')->store('public/files');
             }
 
             $product = $this->repository->create($attributes);
@@ -210,10 +210,10 @@ class ProductController extends Controller
 
                 Storage::delete($product->image);
 
-                $attributes['image'] = $request->file('file')->store('public/files');
+                $attributes['image'] = "/".$request->file('file')->store('public/files');
             }
 
-            $product = $this->repository->update($request->all(), $id);
+            $product = $this->repository->update($attributes, $id);
 
             $response = [
                 'message' => 'Product updated.',
