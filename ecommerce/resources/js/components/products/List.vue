@@ -7,7 +7,7 @@
             <div class="btn-wrapper mt-2 col-md-4">
                 <router-link to="/products/new" class="btn btn-success btn-sm">New</router-link>
                 <router-link to="/products/import" class="btn btn-dark btn-sm">CSV</router-link>
-                <router-link to="/products/scheduler" class="btn btn-info btn-sm text-white">Scheduler</router-link>
+                <router-link to="/products/schedule" class="btn btn-info btn-sm text-white">Scheduler</router-link>
             </div>
         </div>
         <table class="table">

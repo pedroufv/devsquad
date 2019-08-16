@@ -41295,7 +41295,7 @@ var render = function() {
               "router-link",
               {
                 staticClass: "btn btn-info btn-sm text-white",
-                attrs: { to: "/products/scheduler" }
+                attrs: { to: "/products/schedule" }
               },
               [_vm._v("Scheduler")]
             )
