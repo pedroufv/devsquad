@@ -1,6 +1,6 @@
 <template>
     <div class="product-scheduler">
-        <spam>Your file sent will be imported automatically by tasks schedule</spam>
+        <span>Your file sent will be imported automatically by tasks schedule</span>
         <form @submit.prevent="add">
             <table class="table">
                 <tr>
