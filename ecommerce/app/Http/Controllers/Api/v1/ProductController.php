@@ -300,7 +300,7 @@ class ProductController extends Controller
      */
     public function schedule(Request $request)
     {
-        $request->validate(['file' => 'required|mimes:csv']);
+        $request->validate(['file' => 'required|mimes:csv,txt']);
 
         if(!request()->hasFile('file')) {
             return response()->json([
