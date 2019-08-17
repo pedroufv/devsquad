@@ -22,6 +22,11 @@ class Controller extends BaseController
         return view('app');
     }
 
+    public function landing()
+    {
+        return view('landing');
+    }
+
     public function file($filename)
     {
         $path = storage_path() . '/app/public/files/'.$filename;
