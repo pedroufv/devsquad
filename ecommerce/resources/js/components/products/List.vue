@@ -64,7 +64,7 @@
         methods: {
             getProducts() {
                 const searchByName = this.searchName !== '' ?  '&searchJoin=and&search=name:'+this.searchName : '';
-                axios.get('/api/v1/products?page=' + this.products.current_page + searchByName)
+                axios.get('/api/v1/products?orderBy=name&sortedBy=asc&page=' + this.products.current_page + searchByName)
                     .then((response) => {
                         this.products = response.data;
                     });

@@ -2212,7 +2212,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       var searchByName = this.searchName !== '' ? '&searchJoin=and&search=name:' + this.searchName : '';
-      axios.get('/api/v1/products?page=' + this.products.current_page + searchByName).then(function (response) {
+      axios.get('/api/v1/products?orderBy=name&sortedBy=asc&page=' + this.products.current_page + searchByName).then(function (response) {
         _this.products = response.data;
       });
     },
