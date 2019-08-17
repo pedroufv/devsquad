@@ -38,4 +38,4 @@ This project is a [Laravel](https://github.com/laravel/laravel) API scaffold usi
 - With docker run `docker exec -it devsquad bash -c "service supervisor force-reload"` for start queue worker
 - If you run this without docker configure worker on supervisor to queues
 - If you run this without docker add `* * * * * php /path-to-your-projec/artisan schedule:run >> /dev/null 2>&1` on cron
-- On `docker/web/supervisor` has worker file for put into `/etc/supervisor/conf.d/`
+- On `docker/application/supervisor` has worker file for put into `/etc/supervisor/conf.d/`

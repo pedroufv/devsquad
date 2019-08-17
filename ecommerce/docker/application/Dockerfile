@@ -43,8 +43,11 @@ COPY apache /etc/apache2/sites-available/
 
 RUN a2ensite devsquad.conf
 
-COPY supervisor /etc/supervisor/conf.d/
+COPY supervisor/supervisord.conf /etc/supervisor/supervisord.conf
+COPY supervisor/ecommerce-worker.conf /etc/supervisor/conf.d/ecommerce-worker.conf
 RUN mkdir -p /var/www/html/ecommerce/storage/logs/
+RUN chown -R devsquad:devsquad /var/www/html/ecommerce/
+CMD sudo supervisord
 
 COPY cron/ecommerce-cron /etc/cron.d/ecommerce-cron
 RUN chmod 0644 /etc/cron.d/ecommerce-cron

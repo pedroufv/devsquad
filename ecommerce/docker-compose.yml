@@ -2,7 +2,7 @@ version: '3.7'
 services:
   devsquad:
     build:
-      context: './docker/web'
+      context: './docker/application'
       args:
         uid: ${UID}
     container_name: devsquad
