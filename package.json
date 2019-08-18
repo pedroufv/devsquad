@@ -24,6 +24,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "normalize-scss": "^7.0.1",
         "toastr": "^2.1.4",
         "validate.js": "^0.13.1",
         "vue-router": "^3.1.2",
