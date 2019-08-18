@@ -22,7 +22,7 @@ header .banner {
     background: url("../images/banner.png") no-repeat;
     background-size: 100%;
     color: $white;
-    height: 892px;
+    height: 688px;
 }
 
 header .banner .container-fluid {
@@ -59,77 +59,36 @@ header .banner button {
     padding: 0 70px;
 }
 
+header .banner button:hover {
+    background: $dark-green 0 0 no-repeat;
+    cursor: pointer;
+}
+
 header .banner p.text-small {
     font: normal 11px/25px Montserrat;
     letter-spacing: 0.28px;
 }
 
-/*
-.container{
-    margin: auto;
-    max-width: 1080px;
+header .subtitle p {
+    font: normal 15px/30px Montserrat;
+    color: $darkgrey3;
+    letter-spacing: 0;
+    opacity: 1;
+    margin: 20px 0;
 }
 
-.flex {
-    display: flex;
-}
-
-header h1 {
-    background: url("../images/logo.svg") no-repeat;
-    height: 45px;
-}
-
-header .banner {
-    background: url("../images/banner.png") no-repeat;
-    color: white;
-    height: 975px;
-    padding: 6em 0 0 6em
-}
-
-.banner .container {
-    width: 40%;
-    margin: 0;
-    justify-content: flex-start;
-}
-
-.called {
-    letter-spacing: 1.27px;
-    font: Bold 85px/80px Montserrat;
-    margin-bottom: 10px;
-}
-
-.banner p {
-    margin-bottom: 15px;
-    text-align: left;
-    font: Normal 18px/25px Montserrat;
-    letter-spacing: 0.39px;
-    color: #FFFFFF;
+header .subtitle p.getting {
+    font: Bold 25px/45px Montserrat;
+    color: $darkgrey1;
+    letter-spacing: 0;
     opacity: 1;
 }
 
-.button {
-    background: #28AD47 0 0 no-repeat;
-    border: none;
-    border-radius: 37px;
-    color: white;
-    padding: 0 55px;
-    text-align: center;
-    text-decoration: none;
-    font: Bold 20px/39px Montserrat;
-    font-weight: 900;
-    letter-spacing: 0.36px;
+header .subtitle p.getting > span {
+    color: $green;
 }
 
-.button:hover {
-    background: #27864f 0 0 no-repeat;
-    cursor: pointer;
-}
-
-p.text-small{
-    font: Normal 14px/20px Montserrat;
-}
-
-
+/*
 header .subtitle {
     margin: -6.5em auto 0 auto;
     background: #F7F7F7 0 0 no-repeat;

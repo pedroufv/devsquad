@@ -10659,7 +10659,7 @@ header .banner {
   background: url(/images/banner.png?e9c0c834bafe0b40d7c7a8b104a607ff) no-repeat;
   background-size: 100%;
   color: #fff;
-  height: 892px;
+  height: 688px;
 }
 
 header .banner .container-fluid {
@@ -10696,77 +10696,36 @@ header .banner button {
   padding: 0 70px;
 }
 
+header .banner button:hover {
+  background: #27864f 0 0 no-repeat;
+  cursor: pointer;
+}
+
 header .banner p.text-small {
   font: normal 11px/25px Montserrat;
   letter-spacing: 0.28px;
 }
 
+header .subtitle p {
+  font: normal 15px/30px Montserrat;
+  color: #525252;
+  letter-spacing: 0;
+  opacity: 1;
+  margin: 20px 0;
+}
+
+header .subtitle p.getting {
+  font: Bold 25px/45px Montserrat;
+  color: #676767;
+  letter-spacing: 0;
+  opacity: 1;
+}
+
+header .subtitle p.getting > span {
+  color: #38c172;
+}
+
 /*
-.container{
-    margin: auto;
-    max-width: 1080px;
-}
-
-.flex {
-    display: flex;
-}
-
-header h1 {
-    background: url("../images/logo.svg") no-repeat;
-    height: 45px;
-}
-
-header .banner {
-    background: url("../images/banner.png") no-repeat;
-    color: white;
-    height: 975px;
-    padding: 6em 0 0 6em
-}
-
-.banner .container {
-    width: 40%;
-    margin: 0;
-    justify-content: flex-start;
-}
-
-.called {
-    letter-spacing: 1.27px;
-    font: Bold 85px/80px Montserrat;
-    margin-bottom: 10px;
-}
-
-.banner p {
-    margin-bottom: 15px;
-    text-align: left;
-    font: Normal 18px/25px Montserrat;
-    letter-spacing: 0.39px;
-    color: #FFFFFF;
-    opacity: 1;
-}
-
-.button {
-    background: #28AD47 0 0 no-repeat;
-    border: none;
-    border-radius: 37px;
-    color: white;
-    padding: 0 55px;
-    text-align: center;
-    text-decoration: none;
-    font: Bold 20px/39px Montserrat;
-    font-weight: 900;
-    letter-spacing: 0.36px;
-}
-
-.button:hover {
-    background: #27864f 0 0 no-repeat;
-    cursor: pointer;
-}
-
-p.text-small{
-    font: Normal 14px/20px Montserrat;
-}
-
-
 header .subtitle {
     margin: -6.5em auto 0 auto;
     background: #F7F7F7 0 0 no-repeat;
