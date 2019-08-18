@@ -19,18 +19,21 @@ header h1.logo {
 }
 
 header .banner {
-    background-image: url("../images/banner.png");
-    background-repeat: no-repeat;
+    background: url("../images/banner.png") no-repeat;
     background-size: 100%;
-    color: white;
+    color: $white;
     height: 892px;
+}
+
+header .banner .container-fluid {
+    background: rgba(0, 0, 0, 0.3);
+    height: 688px;
 }
 
 header .banner .called {
     text-align: left;
     font: Bold 55px/50px Montserrat;
     letter-spacing: 1.27px;
-    color: #FFFFFF;
     opacity: 1;
     padding-top: 159px;
 }
@@ -39,9 +42,8 @@ header .banner p {
     text-align: left;
     font: normal 14px/25px Montserrat;
     letter-spacing: 0.39px;
-    color: #FFFFFF;
     opacity: 1;
-    padding: 10px 0 5px 15px;
+    padding: 25px 0 5px 15px;
 }
 
 header .banner button {
@@ -55,6 +57,11 @@ header .banner button {
     color: #FFFFFF;
     opacity: 1;
     padding: 0 70px;
+}
+
+header .banner p.text-small {
+    font: normal 11px/25px Montserrat;
+    letter-spacing: 0.28px;
 }
 
 /*
