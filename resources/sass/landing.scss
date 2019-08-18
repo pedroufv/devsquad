@@ -37,11 +37,24 @@ header .banner .called {
 
 header .banner p {
     text-align: left;
-    font: Regular 26px/35px Montserrat;
+    font: normal 14px/25px Montserrat;
     letter-spacing: 0.39px;
     color: #FFFFFF;
     opacity: 1;
-    padding: 10px 0 55px 15px;
+    padding: 10px 0 5px 15px;
+}
+
+header .banner button {
+    background: $green 0 0 no-repeat padding-box;
+    border: none;
+    border-radius: 37px;
+    text-align: center;
+    font: Bold 14px/35px Montserrat;
+    font-weight: 900;
+    letter-spacing: 0.36px;
+    color: #FFFFFF;
+    opacity: 1;
+    padding: 0 70px;
 }
 
 /*
