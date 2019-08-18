@@ -11,7 +11,7 @@ This project is a SPA with [Laravel](https://github.com/laravel/laravel) + [VueJ
 
 
 ## Install
-1. clone project ```git clone git@github.com:...```
+1. clone project ```git clone https://github.com/pedroufv/devsquad```
 2. install dependencies ```composer install``` and `npm install`
 3. copy file .env.exemple and rename .env ```cp .env.example .env```
 4. change .env settings
