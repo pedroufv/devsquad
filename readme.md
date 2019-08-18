@@ -33,6 +33,7 @@ This project is a SPA with [Laravel](https://github.com/laravel/laravel) + [VueJ
 - access `http://devsquad.local:8080` on browser
 - using `host 172.28.1.1` check for users created and use `password` as password
 - see api documentation in `/api/doc` like `http://devsquad.local:8080/api/doc`
+- access landing page on `/landing` like `http://devsquad.local:8080/landing`
 
 ## Additional info
 - Configure email on `.env` with mailtrap, for example, to see the sent notifications
