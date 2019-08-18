@@ -10647,19 +10647,38 @@ a.text-dark:focus {
 header .top {
   background: #FFFFFF 0% 0% no-repeat padding-box;
   opacity: 1;
-  padding: 6px 0 8px 0;
+  padding: 16px 0 14px 0;
 }
 
 header h1.logo {
   background: url(/images/logo.svg?bfcc988a242095f30a703db3591d8b45) no-repeat;
-  height: 45px;
+  height: 53px;
 }
 
 header .banner {
-  background: url(/images/banner.png?e9c0c834bafe0b40d7c7a8b104a607ff) no-repeat;
+  background-image: url(/images/banner.png?e9c0c834bafe0b40d7c7a8b104a607ff);
+  background-repeat: no-repeat;
+  background-size: 100%;
   color: white;
-  height: 975px;
-  padding: 6em 0 0 6em;
+  height: 892px;
+}
+
+header .banner .called {
+  text-align: left;
+  font: Bold 55px/50px Montserrat;
+  letter-spacing: 1.27px;
+  color: #FFFFFF;
+  opacity: 1;
+  padding-top: 159px;
+}
+
+header .banner p {
+  text-align: left;
+  font: Regular 26px/35px Montserrat;
+  letter-spacing: 0.39px;
+  color: #FFFFFF;
+  opacity: 1;
+  padding: 10px 0 55px 15px;
 }
 
 /*
