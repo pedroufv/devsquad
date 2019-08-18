@@ -10647,7 +10647,7 @@ a.text-dark:focus {
 header .top {
   background: #FFFFFF 0% 0% no-repeat padding-box;
   opacity: 1;
-  padding: 16px 0 14px 0;
+  padding: 16px 0 14px 35px;
 }
 
 header h1.logo {
