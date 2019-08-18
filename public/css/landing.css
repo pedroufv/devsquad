@@ -10706,6 +10706,10 @@ header .banner p.text-small {
   letter-spacing: 0.28px;
 }
 
+header .subtitle {
+  background: #F7F7F7;
+}
+
 header .subtitle p {
   font: normal 15px/30px Montserrat;
   color: #525252;
