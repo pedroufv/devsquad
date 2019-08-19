@@ -10644,6 +10644,22 @@ a.text-dark:focus {
   }
 }
 
+button {
+  background: #38c172 0 0 no-repeat padding-box;
+  border: none;
+  border-radius: 37px;
+  text-align: center;
+  font-weight: 900;
+  letter-spacing: 0.36px;
+  color: #FFFFFF;
+  opacity: 1;
+}
+
+button:hover {
+  background: #27864f 0 0 no-repeat;
+  cursor: pointer;
+}
+
 header .top {
   background: #FFFFFF 0% 0% no-repeat padding-box;
   opacity: 1;
@@ -10684,21 +10700,8 @@ header .banner p {
 }
 
 header .banner button {
-  background: #38c172 0 0 no-repeat padding-box;
-  border: none;
-  border-radius: 37px;
-  text-align: center;
   font: Bold 14px/35px Montserrat;
-  font-weight: 900;
-  letter-spacing: 0.36px;
-  color: #FFFFFF;
-  opacity: 1;
   padding: 0 70px;
-}
-
-header .banner button:hover {
-  background: #27864f 0 0 no-repeat;
-  cursor: pointer;
 }
 
 header .banner p.text-small {
@@ -10741,6 +10744,18 @@ header .subtitle p.getting > span {
   opacity: 1;
 }
 
+.content h3 {
+  font: Bold 18px/25px Montserrat;
+  letter-spacing: 0.53px;
+  color: #676767;
+  opacity: 1;
+}
+
+.content img {
+  border: none;
+  padding: 0;
+}
+
 .content .guesswork p {
   font: normal 14px/30px Montserrat;
   color: #525252;
@@ -10751,33 +10766,26 @@ header .subtitle p.getting > span {
   padding: 20px 0;
 }
 
-.content .guesswork .advantages img {
-  border: none;
-  padding: 0;
-}
-
 .content .guesswork .advantages .text-advantages {
   font: normal 12px/20px Montserrat;
   padding: 0;
 }
 
-.content .guesswork .advantages img.img-quickly {
-  background: url(/images/quickly.svg?9c082c67a620b0ae0a33887a291ab94e) 98px 98px no-repeat;
-}
-
-.content .guesswork .advantages img.img-senior {
-  background: url(/images/senior.svg?3861176a4e6f2b9b2b4436d26a499b99) 98px 98px no-repeat;
-}
-
-.content .guesswork .advantages img.img-strategize {
-  background: url(/images/strategize.svg?79fb4382f0833e86286914c25ebc81a1) 98px 98px no-repeat;
-}
-
-.content .guesswork .advantages img.img-loan {
-  background: url(/images/loan.svg?06ae0e9e197fe777d938a11bbb63172a) 98px 98px no-repeat;
-}
-
 .content .capitalfor {
   background: #F7F7F7;
+  padding-top: 20px;
+}
+
+.content .startup {
+  padding-top: 20px;
+}
+
+.content .startup .text {
+  padding-top: 30px;
+}
+
+.content .startup button {
+  font: Bold 12px/25px Montserrat;
+  padding: 0 25px;
 }
 

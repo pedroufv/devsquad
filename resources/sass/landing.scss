@@ -7,6 +7,22 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+button {
+    background: $green 0 0 no-repeat padding-box;
+    border: none;
+    border-radius: 37px;
+    text-align: center;
+    font-weight: 900;
+    letter-spacing: 0.36px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+button:hover {
+    background: $dark-green 0 0 no-repeat;
+    cursor: pointer;
+}
+
 header .top {
     background: #FFFFFF 0% 0% no-repeat padding-box;
     opacity: 1;
@@ -47,21 +63,8 @@ header .banner p {
 }
 
 header .banner button {
-    background: $green 0 0 no-repeat padding-box;
-    border: none;
-    border-radius: 37px;
-    text-align: center;
     font: Bold 14px/35px Montserrat;
-    font-weight: 900;
-    letter-spacing: 0.36px;
-    color: #FFFFFF;
-    opacity: 1;
     padding: 0 70px;
-}
-
-header .banner button:hover {
-    background: $dark-green 0 0 no-repeat;
-    cursor: pointer;
 }
 
 header .banner p.text-small {
@@ -104,6 +107,18 @@ header .subtitle p.getting > span {
     opacity: 1;
 }
 
+.content h3 {
+    font: Bold 18px/25px Montserrat;
+    letter-spacing: 0.53px;
+    color: $darkgrey1;
+    opacity: 1;
+}
+
+.content img {
+    border: none;
+    padding: 0;
+}
+
 .content .guesswork p {
     font: normal 14px/30px Montserrat;
     color: $darkgrey3;
@@ -114,32 +129,25 @@ header .subtitle p.getting > span {
     padding: 20px 0;
 }
 
-.content .guesswork .advantages img {
-    border: none;
-    padding: 0;
-}
-
 .content .guesswork .advantages .text-advantages {
     font: normal 12px/20px Montserrat;
     padding: 0;
 }
 
-.content .guesswork .advantages img.img-quickly {
-    background: url("../images/quickly.svg") 98px 98px no-repeat;
-}
-
-.content .guesswork .advantages img.img-senior {
-    background: url("../images/senior.svg") 98px 98px no-repeat;
-}
-
-.content .guesswork .advantages img.img-strategize {
-    background: url("../images/strategize.svg") 98px 98px no-repeat;
-}
-
-.content .guesswork .advantages img.img-loan {
-    background: url("../images/loan.svg") 98px 98px no-repeat;
-}
-
 .content .capitalfor {
     background: $couldwihte;
+    padding-top: 20px;
+}
+
+.content .startup {
+    padding-top: 20px;
+}
+
+.content .startup .text {
+    padding-top: 30px;
+}
+
+.content .startup button {
+    font: Bold 12px/25px Montserrat;
+    padding: 0 25px;
 }
