@@ -1,10 +1,8 @@
-<div class="content container">
+<div class="content container-fluid">
 
     @include('landing.partials.content.guesswork')
 
-    <div class="block2">
-
-    </div>
+    @include('landing.partials.content.capitalfor')
 
     <div class="block3">
 

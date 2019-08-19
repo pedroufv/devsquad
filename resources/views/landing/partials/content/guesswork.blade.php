@@ -1,9 +1,9 @@
 <div class="guesswork container">
     <div class="row justify-content-center">
-        <p class="title-guesswork">Take the guesswork out of funding</p>
+        <h2>Take the guesswork out of funding</h2>
     </div>
     <div class="row justify-content-center">
-        <p class="col-md-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+        <p class="text col-md-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
     </div>
     <div class="advantages row">
         <div class="quickly col-md-3">

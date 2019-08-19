@@ -10733,18 +10733,18 @@ header .subtitle p.getting > span {
   padding-top: 30px;
 }
 
-.content .guesswork p {
-  font: normal 14px/30px Montserrat;
-  color: #525252;
-  padding: 0;
-}
-
-.content .guesswork p.title-guesswork {
+.content h2 {
   text-align: center;
   font: Bold 25px/30px Montserrat;
   letter-spacing: 0.53px;
   color: #676767;
   opacity: 1;
+}
+
+.content .guesswork p {
+  font: normal 14px/30px Montserrat;
+  color: #525252;
+  padding: 0;
 }
 
 .content .guesswork .advantages {
@@ -10775,5 +10775,9 @@ header .subtitle p.getting > span {
 
 .content .guesswork .advantages img.img-loan {
   background: url(/images/loan.svg?06ae0e9e197fe777d938a11bbb63172a) 98px 98px no-repeat;
+}
+
+.content .capitalfor {
+  background: #F7F7F7;
 }
 
