@@ -10747,3 +10747,33 @@ header .subtitle p.getting > span {
   opacity: 1;
 }
 
+.content .guesswork .advantages {
+  padding: 20px 0;
+}
+
+.content .guesswork .advantages img {
+  border: none;
+  padding: 0;
+}
+
+.content .guesswork .advantages .text-advantages {
+  font: normal 12px/20px Montserrat;
+  padding: 0;
+}
+
+.content .guesswork .advantages img.img-quickly {
+  background: url(/images/quickly.svg?9c082c67a620b0ae0a33887a291ab94e) 98px 98px no-repeat;
+}
+
+.content .guesswork .advantages img.img-senior {
+  background: url(/images/senior.svg?3861176a4e6f2b9b2b4436d26a499b99) 98px 98px no-repeat;
+}
+
+.content .guesswork .advantages img.img-strategize {
+  background: url(/images/strategize.svg?79fb4382f0833e86286914c25ebc81a1) 98px 98px no-repeat;
+}
+
+.content .guesswork .advantages img.img-loan {
+  background: url(/images/loan.svg?06ae0e9e197fe777d938a11bbb63172a) 98px 98px no-repeat;
+}
+

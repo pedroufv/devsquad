@@ -109,3 +109,32 @@ header .subtitle p.getting > span {
     color: $darkgrey1;
     opacity: 1;
 }
+.content .guesswork .advantages {
+    padding: 20px 0;
+}
+
+.content .guesswork .advantages img {
+    border: none;
+    padding: 0;
+}
+
+.content .guesswork .advantages .text-advantages {
+    font: normal 12px/20px Montserrat;
+    padding: 0;
+}
+
+.content .guesswork .advantages img.img-quickly {
+    background: url("../images/quickly.svg") 98px 98px no-repeat;
+}
+
+.content .guesswork .advantages img.img-senior {
+    background: url("../images/senior.svg") 98px 98px no-repeat;
+}
+
+.content .guesswork .advantages img.img-strategize {
+    background: url("../images/strategize.svg") 98px 98px no-repeat;
+}
+
+.content .guesswork .advantages img.img-loan {
+    background: url("../images/loan.svg") 98px 98px no-repeat;
+}
