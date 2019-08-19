@@ -10776,7 +10776,7 @@ header .subtitle p.getting > span {
   padding: 0;
 }
 
-.content .guesswork .advantages .text-advantages {
+.content .guesswork p .advantages .text-advantages {
   font: normal 12px/20px Montserrat;
   padding: 0;
 }
@@ -10830,7 +10830,7 @@ footer ul {
 }
 
 footer li:hover,
-.social img:hover {
+footer .social img:hover {
   cursor: pointer;
   opacity: 0.5;
 }

@@ -20,178 +20,185 @@ button {
     letter-spacing: 0.36px;
     color: #FFFFFF;
     opacity: 1;
+
+    &:hover {
+        background: $dark-green 0 0 no-repeat;
+        cursor: pointer;
+    }
 }
 
-button:hover {
-    background: $dark-green 0 0 no-repeat;
-    cursor: pointer;
+header {
+    .top {
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        opacity: 1;
+        padding: 16px 0 14px 35px;
+    }
+
+    h1.logo {
+        background: url("../images/logo.svg") no-repeat;
+        height: 53px;
+    }
+
+    .banner {
+        background: url("../images/banner.png") no-repeat;
+        background-size: 100%;
+        color: $white;
+        height: 688px;
+
+        .container-fluid {
+            background: rgba(0, 0, 0, 0.3);
+            height: 688px;
+        }
+
+        .called {
+            text-align: left;
+            font: Bold 55px/50px Montserrat;
+            letter-spacing: 1.27px;
+            opacity: 1;
+            padding-top: 159px;
+        }
+
+        p {
+            text-align: left;
+            font: normal 14px/25px Montserrat;
+            letter-spacing: 0.39px;
+            opacity: 1;
+            padding: 25px 0 5px 15px;
+        }
+
+        button {
+            font: Bold 14px/35px Montserrat;
+            padding: 0 70px;
+        }
+
+        p.text-small {
+            font: normal 11px/25px Montserrat;
+            letter-spacing: 0.28px;
+        }
+    }
+
+    .subtitle {
+        background: $couldwihte;
+
+         p {
+            font: normal 15px/30px Montserrat;
+            color: $darkgrey3;
+            letter-spacing: 0;
+            opacity: 1;
+            margin: 20px 0;
+
+            &.getting {
+                font: Bold 25px/45px Montserrat;
+                color: $darkgrey1;
+                letter-spacing: 0;
+                opacity: 1;
+
+                > span {
+                    color: $green;
+                }
+            }
+        }
+    }
 }
 
-header .top {
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    opacity: 1;
-    padding: 16px 0 14px 35px;
-}
-
-header h1.logo {
-    background: url("../images/logo.svg") no-repeat;
-    height: 53px;
-}
-
-header .banner {
-    background: url("../images/banner.png") no-repeat;
-    background-size: 100%;
-    color: $white;
-    height: 688px;
-}
-
-header .banner .container-fluid {
-    background: rgba(0, 0, 0, 0.3);
-    height: 688px;
-}
-
-header .banner .called {
-    text-align: left;
-    font: Bold 55px/50px Montserrat;
-    letter-spacing: 1.27px;
-    opacity: 1;
-    padding-top: 159px;
-}
-
-header .banner p {
-    text-align: left;
-    font: normal 14px/25px Montserrat;
-    letter-spacing: 0.39px;
-    opacity: 1;
-    padding: 25px 0 5px 15px;
-}
-
-header .banner button {
-    font: Bold 14px/35px Montserrat;
-    padding: 0 70px;
-}
-
-header .banner p.text-small {
-    font: normal 11px/25px Montserrat;
-    letter-spacing: 0.28px;
-}
-
-header .subtitle {
-    background: $couldwihte;
-}
-
-header .subtitle p {
-    font: normal 15px/30px Montserrat;
-    color: $darkgrey3;
-    letter-spacing: 0;
-    opacity: 1;
-    margin: 20px 0;
-}
-
-header .subtitle p.getting {
-    font: Bold 25px/45px Montserrat;
-    color: $darkgrey1;
-    letter-spacing: 0;
-    opacity: 1;
-}
-
-header .subtitle p.getting > span {
-    color: $green;
-}
 
 .content {
     padding-top: 30px;
+
+    h1 {
+        font: Bold 50px/65px Montserrat;
+        letter-spacing: 0.97px;
+        color: $darkgrey2;
+        opacity: 1;
+        padding-top: 30px;
+        font-weight: 900;
+    }
+
+    h2 {
+        text-align: center;
+        font: Bold 25px/30px Montserrat;
+        letter-spacing: 0.53px;
+        color: $darkgrey1;
+        opacity: 1;
+        padding-top: 30px;
+    }
+
+    h3 {
+        font: Bold 18px/25px Montserrat;
+        letter-spacing: 0.53px;
+        color: $darkgrey1;
+        opacity: 1;
+    }
+
+    img {
+        padding: 0;
+    }
+
+    .guesswork p {
+        font: normal 14px/30px Montserrat;
+        color: $darkgrey3;
+        padding: 0;
+
+        .advantages .text-advantages {
+            font: normal 12px/20px Montserrat;
+            padding: 0;
+        }
+    }
+
+    .capitalfor {
+        background: $couldwihte;
+
+        .text {
+            padding-top: 30px;
+        }
+
+        button {
+            font: Bold 12px/25px Montserrat;
+            padding: 0 25px;
+        }
+    }
+
+    .testimonials {
+        background: $white;
+    }
+
+    .card {
+        margin-top: 10px;
+
+        .row {
+            padding: 20px;
+
+            span {
+                font: normal 12px/15px Montserrat;
+            }
+        }
+
+    }
+
+   .finish button {
+        font: Bold 20px/45px Montserrat;
+        padding: 5px 25px;
+        margin-bottom: 20px;
+    }
 }
 
-.content h1 {
-    font: Bold 50px/65px Montserrat;
-    letter-spacing: 0.97px;
-    color: $darkgrey2;
-    opacity: 1;
-    padding-top: 30px;
-    font-weight: 900;
-}
-
-.content h2 {
-    text-align: center;
-    font: Bold 25px/30px Montserrat;
-    letter-spacing: 0.53px;
-    color: $darkgrey1;
-    opacity: 1;
-    padding-top: 30px;
-}
-
-.content h3 {
-    font: Bold 18px/25px Montserrat;
-    letter-spacing: 0.53px;
-    color: $darkgrey1;
-    opacity: 1;
-}
-
-.content img {
-    padding: 0;
-}
-
-.content .guesswork p {
-    font: normal 14px/30px Montserrat;
-    color: $darkgrey3;
-    padding: 0;
-}
-
-.content .guesswork .advantages .text-advantages {
-    font: normal 12px/20px Montserrat;
-    padding: 0;
-}
-
-.content .capitalfor {
-    background: $couldwihte;
-}
-
-.content .capitalfor .text {
-    padding-top: 30px;
-}
-
-.content .capitalfor button {
-    font: Bold 12px/25px Montserrat;
-    padding: 0 25px;
-}
-
-.content .testimonials {
-    background: $white;
-}
-
-.content .card {
-    margin-top: 10px;
-}
-
-.content .card .row {
-    padding: 20px;
-}
-
-.content .card .row span {
-    font: normal 12px/15px Montserrat;
-}
-
-.content .finish button {
-    font: Bold 20px/45px Montserrat;
-    padding: 5px 25px;
-    margin-bottom: 20px;
-}
 
 footer {
     background: $darkgrey4;
     padding-top: 30px;
     color: $white;
     height: 250px;
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    li:hover, .social img:hover {
+        cursor: pointer;
+        opacity: 0.5;
+    }
 }
 
-footer ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
 
-footer li:hover, .social img:hover {
-    cursor: pointer;
-    opacity: 0.5;
-}
