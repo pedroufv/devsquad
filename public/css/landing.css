@@ -10644,6 +10644,11 @@ a.text-dark:focus {
   }
 }
 
+.img-thumbnail {
+  background-color: transparent;
+  border: none;
+}
+
 button {
   background: #38c172 0 0 no-repeat padding-box;
   border: none;
@@ -10762,7 +10767,6 @@ header .subtitle p.getting > span {
 }
 
 .content img {
-  border: none;
   padding: 0;
 }
 
@@ -10810,5 +10814,24 @@ header .subtitle p.getting > span {
   font: Bold 20px/45px Montserrat;
   padding: 5px 25px;
   margin-bottom: 20px;
+}
+
+footer {
+  background: #707070;
+  padding-top: 30px;
+  color: #fff;
+  height: 250px;
+}
+
+footer ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer li:hover,
+.social img:hover {
+  cursor: pointer;
+  opacity: 0.5;
 }
 

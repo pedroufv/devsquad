@@ -17,9 +17,7 @@
 
         @include('landing.content')
 
-
-{{--        @include('landing.footer')--}}
-
+        @include('landing.footer')
 
     </body>
 </html>
