@@ -1,15 +1,6 @@
-<div class="container">
+<div class="content container">
 
-    <div class="block1">
-        <div class="row">
-            <p class="strong col-md-4">Take the guesswork out of funding</p>
-            <p class="col-md-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-        </div>
-        <div>
-
-        </div>
-
-    </div>
+    @include('landing.partials.content.guesswork')
 
     <div class="block2">
 

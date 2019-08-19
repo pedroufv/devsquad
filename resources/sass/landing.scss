@@ -92,36 +92,20 @@ header .subtitle p.getting > span {
     color: $green;
 }
 
-/*
-header .subtitle {
-    margin: -6.5em auto 0 auto;
-    background: #F7F7F7 0 0 no-repeat;
-    height: 192px;
-    padding: 2em;
+.content {
+    padding-top: 30px;
 }
 
-.subtitle p {
-    text-align: left;
-    font: Normal 13px/25px Montserrat;
-    letter-spacing: 0.39px;
-    color: #525252;
-    opacity: 1;
+.content .guesswork p {
+    font: normal 14px/30px Montserrat;
+    color: $darkgrey3;
+    padding: 0;
 }
 
-.subtitle .container {
-    justify-content: space-around;
-}
-
-p.getting {
+.content .guesswork p.title-guesswork {
     text-align: center;
-    font: Bold 35px/50px Montserrat;
-    color: #676767;
-    letter-spacing: 0;
+    font: Bold 25px/30px Montserrat;
+    letter-spacing: 0.53px;
+    color: $darkgrey1;
     opacity: 1;
-    margin: 0;
 }
-
-.getting span {
-    color: #28AD47;
-}
-*/
