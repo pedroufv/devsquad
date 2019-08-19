@@ -4,9 +4,7 @@
 
     @include('landing.partials.content.capitalfor')
 
-    <div class="block3">
-
-    </div>
+    @include('landing.partials.content.testimonials')
 
     <div class="block4">
 

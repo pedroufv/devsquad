@@ -10742,6 +10742,7 @@ header .subtitle p.getting > span {
   letter-spacing: 0.53px;
   color: #676767;
   opacity: 1;
+  padding-top: 30px;
 }
 
 .content h3 {
@@ -10762,10 +10763,6 @@ header .subtitle p.getting > span {
   padding: 0;
 }
 
-.content .guesswork .advantages {
-  padding: 20px 0;
-}
-
 .content .guesswork .advantages .text-advantages {
   font: normal 12px/20px Montserrat;
   padding: 0;
@@ -10773,11 +10770,6 @@ header .subtitle p.getting > span {
 
 .content .capitalfor {
   background: #F7F7F7;
-  padding-top: 20px;
-}
-
-.content .capitalfor {
-  padding-top: 20px;
 }
 
 .content .capitalfor .text {
@@ -10787,5 +10779,21 @@ header .subtitle p.getting > span {
 .content .capitalfor button {
   font: Bold 12px/25px Montserrat;
   padding: 0 25px;
+}
+
+.content .testimonials {
+  background: #fff;
+}
+
+.content .card {
+  margin-top: 10px;
+}
+
+.content .card .row {
+  padding: 20px;
+}
+
+.content .card .row span {
+  font: normal 12px/15px Montserrat;
 }
 
