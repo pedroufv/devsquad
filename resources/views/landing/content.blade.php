@@ -6,9 +6,6 @@
 
     @include('landing.partials.content.testimonials')
 
-    <div class="block4">
-
-    </div>
-
+    @include('landing.partials.content.finish')
 
 </div>

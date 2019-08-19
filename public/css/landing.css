@@ -10736,6 +10736,15 @@ header .subtitle p.getting > span {
   padding-top: 30px;
 }
 
+.content h1 {
+  font: Bold 50px/65px Montserrat;
+  letter-spacing: 0.97px;
+  color: #7B7B7B;
+  opacity: 1;
+  padding-top: 30px;
+  font-weight: 900;
+}
+
 .content h2 {
   text-align: center;
   font: Bold 25px/30px Montserrat;
@@ -10795,5 +10804,11 @@ header .subtitle p.getting > span {
 
 .content .card .row span {
   font: normal 12px/15px Montserrat;
+}
+
+.content .finish button {
+  font: Bold 20px/45px Montserrat;
+  padding: 5px 25px;
+  margin-bottom: 20px;
 }
 
