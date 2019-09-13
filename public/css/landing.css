@@ -10671,3 +10671,16 @@ body {
   letter-spacing: 0.39px;
 }
 
+.jumbotron .main-message button {
+  font-weight: 900;
+  background: #38c172 0 0 no-repeat padding-box;
+  color: #F7F7F7;
+  border-radius: 20px;
+  letter-spacing: 0.36px;
+  opacity: 1;
+}
+
+.jumbotron .main-message button:hover {
+  opacity: 0.9;
+}
+

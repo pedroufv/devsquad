@@ -26,6 +26,7 @@
                 <div class="main-message col-8">
                     <h1 class="display-3">Fast and simple, Unsecured funding.</h1>
                     <p class="col-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                    <button class="btn col-3">APPLY NOW</button>
                 </div>
             </div>
 

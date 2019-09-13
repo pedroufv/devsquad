@@ -30,8 +30,23 @@ body {
 
         p {
             padding: .8em 0;
-            letter-spacing: 0.39px;
+            letter-spacing: .39px;
         }
+
+        button {
+            font-weight: 900;
+            background: $green 0 0 no-repeat padding-box;
+            color: $couldwihte;
+            border-radius: 20px;
+            letter-spacing: 0.36px;
+            opacity: 1;
+
+            &:hover {
+                opacity: 0.9;
+            }
+        }
+
+
     }
 
 }
