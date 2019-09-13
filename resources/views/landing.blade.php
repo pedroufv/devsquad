@@ -13,11 +13,21 @@
     </head>
     <body>
 
-        <nav>
-
+        <nav class="container">
+            <div class="nav-brand">
+                <a title="landing" href="#">
+                    <img src="../images/logo.svg"/>
+                </a>
+            </div>
         </nav>
 
-        <div class="hero">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <div class="main-message col-8">
+                    <h1 class="display-3">Fast and simple, Unsecured funding.</h1>
+                    <p class="col-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                </div>
+            </div>
 
         </div>
 

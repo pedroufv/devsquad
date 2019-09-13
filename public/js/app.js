@@ -59203,9 +59203,9 @@ var user = Object(_helpers_auth__WEBPACK_IMPORTED_MODULE_0__["getLocalUser"])();
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/pedro/Dev/Projetos/devsquad2/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /home/pedro/Dev/Projetos/devsquad2/resources/sass/app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! /home/pedro/Dev/Projetos/devsquad2/resources/sass/landing.scss */"./resources/sass/landing.scss");
+__webpack_require__(/*! /home/pedroaugusto/dev/projetos/devsquad/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /home/pedroaugusto/dev/projetos/devsquad/resources/sass/app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! /home/pedroaugusto/dev/projetos/devsquad/resources/sass/landing.scss */"./resources/sass/landing.scss");
 
 
 /***/ })
