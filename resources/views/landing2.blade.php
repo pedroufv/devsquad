@@ -13,18 +13,11 @@
     </head>
     <body>
 
-        <nav>
+        @include('landing.header')
 
-        </nav>
+        @include('landing.content')
 
-        <div class="hero">
-
-        </div>
-
-        <footer>
-
-        </footer>
-
+        @include('landing.footer')
 
     </body>
 </html>
