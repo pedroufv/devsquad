@@ -22,9 +22,9 @@
         </nav>
 
         <div class="jumbotron jumbotron-fluid">
-            <div class="container">
+            <div class="container mt-5">
                 <div class="main-message col-6">
-                    <h1 class="display-4 font-weight-bold">Fast and simple, Unsecured funding.</h1>
+                    <h1 class="display-4 font-weight-bold pt-5">Fast and simple, Unsecured funding.</h1>
                     <p class="col-lg-5 col-xl-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
                     <button class="btn font-weight-bolder text-uppercase pr-5 pl-5">apply now</button>
                     <p class="col-lg-5 col-xl-5 font-weight-light text-small">Applying doesn’t affect your credit score, and there’s no obligation to accept funding.</p>
