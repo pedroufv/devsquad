@@ -10648,36 +10648,42 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-.nav-brand {
-  padding: 1.1em 1em 0.8em;
+nav {
+  background-color: white;
+}
+
+nav .nav-brand {
+  padding: 1.1em 1.5em 0.8em;
 }
 
 .jumbotron {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url(/images/hero.png?e9c0c834bafe0b40d7c7a8b104a607ff) center no-repeat;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), url(/images/hero.png?e9c0c834bafe0b40d7c7a8b104a607ff) center no-repeat;
   background-size: cover;
 }
 
 .jumbotron .main-message {
-  color: #FFFFFF;
+  color: white;
 }
 
 .jumbotron .main-message h1 {
-  font-weight: 700;
   letter-spacing: 1.27px;
 }
 
 .jumbotron .main-message p {
-  padding: 0.8em 0;
+  padding: 0.8em 0 0;
   letter-spacing: 0.39px;
 }
 
+.jumbotron .main-message p.text-small {
+  font-size: 12px;
+  letter-spacing: 0.28px;
+}
+
 .jumbotron .main-message button {
-  font-weight: 900;
   background: #38c172 0 0 no-repeat padding-box;
   color: #F7F7F7;
   border-radius: 20px;
   letter-spacing: 0.36px;
-  opacity: 1;
 }
 
 .jumbotron .main-message button:hover {

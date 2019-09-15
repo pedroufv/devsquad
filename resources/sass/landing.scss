@@ -12,41 +12,45 @@ body {
 }
 
 // Nav
-.nav-brand {
-    padding: 1.1em 1em .8em;
+nav {
+    background-color: white;
+    .nav-brand {
+        padding: 1.1em 1.5em .8em;
+    }
 }
+
 
 // Hero
 .jumbotron  {
-    background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.5) 100%), url("../images/hero.png") center no-repeat;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.3) 100%), url("../images/hero.png") center no-repeat;
     background-size: cover;
 
     .main-message {
-        color: #FFFFFF;
+        color: white;
         h1 {
-            font-weight: 700;
             letter-spacing: 1.27px;
         }
 
         p {
-            padding: .8em 0;
+            padding: .8em 0 0;
             letter-spacing: .39px;
+
+            &.text-small {
+                font-size: 12px;
+                letter-spacing: 0.28px;
+            }
         }
 
         button {
-            font-weight: 900;
             background: $green 0 0 no-repeat padding-box;
             color: $couldwihte;
             border-radius: 20px;
             letter-spacing: 0.36px;
-            opacity: 1;
 
             &:hover {
                 opacity: 0.9;
             }
         }
-
-
     }
 
 }
