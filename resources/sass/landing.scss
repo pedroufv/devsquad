@@ -7,6 +7,10 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+h2 {
+    color: $darkgrey1;
+}
+
 body {
     font-family: $font-family-sans-serif;
 }
@@ -41,7 +45,6 @@ nav {
         }
 
         button {
-            background: $green 0 0 no-repeat padding-box;
             color: $couldwihte;
             border-radius: 20px;
             letter-spacing: 0.36px;
@@ -50,5 +53,12 @@ nav {
                 opacity: 0.9;
             }
         }
+    }
+}
+
+// Subscription
+.subscription {
+    p {
+        letter-spacing: 0.39px;
     }
 }
