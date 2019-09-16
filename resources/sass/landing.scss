@@ -11,13 +11,18 @@ h2 {
     color: $darkgrey1;
 }
 
+h3 {
+    color: $darkgrey1;
+    letter-spacing: 0.53px;
+}
+
 body {
     font-family: $font-family-sans-serif;
 }
 
+
 // Nav
 nav {
-    background-color: white;
     .nav-brand {
         padding: 1.1em 1.5em .8em;
     }
@@ -58,7 +63,19 @@ nav {
 
 // Subscription
 .subscription {
+    margin-top: -32px;
+    padding-top: 32px;
     p {
         letter-spacing: 0.39px;
+    }
+}
+
+// Guesswork
+.guesswork{
+    padding-top: 40px;
+    p {
+        color: $darkgrey3;
+        letter-spacing: 0.4px;
+        font-size: 13px;
     }
 }

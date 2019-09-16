@@ -12,7 +12,7 @@
     </head>
     <body>
 
-        <nav class="container-fluid">
+        <nav class="container-fluid bg-white">
             <div class="nav-brand container">
                 <a title="landing" href="#">
                     <img src="../images/logo.svg"/>
@@ -31,10 +31,19 @@
             </div>
         </div>
 
-        <div class="container subscription">
-            <div class="row">
-                <h2 class="offset-1 col-5 font-weight-bold">Getting <span class="text-secondary">capital</span> for your business is complicated</h2>
-                <p class="col-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <div class="container-fluid bg-grey">
+            <div class="container subscription">
+                <div class="row">
+                    <h2 class="offset-1 col-5 font-weight-bold">Getting <span class="text-secondary">capital</span> for your business is complicated</h2>
+                    <p class="col-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid bg-white guesswork">
+            <div class="container text-center">
+                <h3 class="font-weight-bold">Take the guesswork out of funding</h3>
+                <p class="offset-4 col-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
             </div>
         </div>
 
