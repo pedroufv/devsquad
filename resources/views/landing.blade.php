@@ -40,10 +40,33 @@
             </div>
         </div>
 
-        <div class="container-fluid bg-white guesswork">
+        <div class="container-fluid bg-white pt-5 guesswork">
             <div class="container text-center">
                 <h3 class="font-weight-bold">Take the guesswork out of funding</h3>
                 <p class="offset-4 col-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+            </div>
+        </div>
+
+        <div class="container-fluid bg-white pt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3">
+                        <img class="float-left" src="../images/quickly.svg" alt="lightning"/>
+                        <p>Funding awarded in just 10 - 21 days so you can move quickly.</p>
+                    </div>
+                    <div class="col-xl-3">
+                        <img class="float-left" src="../images/senior.svg" alt="senior"/>
+                        <p>Senior funding advisor to help you succeed.</p>
+                    </div>
+                    <div class="col-xl-3">
+                        <img class="float-left" src="../images/strategize.svg" alt="strategize"/>
+                        <p>Data-driven algorithm to strategize your application process for the best results.</p>
+                    </div>
+                    <div class="col-xl-3">
+                        <img class="float-left" src="../images/loan.svg" alt="loan"/>
+                        <p>Loan marketplace to make lenders compete for you and improve their terms.</p>
+                    </div>
+                </div>
             </div>
         </div>
 
